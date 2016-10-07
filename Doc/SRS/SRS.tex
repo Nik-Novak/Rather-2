@@ -48,7 +48,7 @@ Date 2 & 1.1 & Notes\\
 
 \pagenumbering{arabic}
 
-This document describes the requirements for ....  The template for the Software
+This document describes the requirements for Rather  The template for the Software
 Requirements Specification (SRS) is a subset of the Volere
 template~\citep{RobertsonAndRobertson2012}.  If you make further modifications
 to the template, you should explicity state what modifications were made.
@@ -60,10 +60,13 @@ to the template, you should explicity state what modifications were made.
 \subsection{The Stakeholders}
 
 \subsubsection{The Client}
+The client is Dr Spencer Smith at Mcmaster University and the marking ta's for 3xa3. 
 
 \subsubsection{The Customers}
+The client is anyone who uses Google Chrome and wishes to filter out unwanted things from their newsfeed. The websites the filter currently works for are Twitter and Facebook
 
 \subsubsection{Other Stakeholders}
+The additional Stakeholder's in this project are anyone else who wishes to participate in the public project. This could include the original creator of Rather and anyone who finds the Git repository online. 
 
 \subsection{Mandated Constraints}
 
@@ -76,6 +79,7 @@ User characteristics should go under assumptions.
 \section{Functional Requirements}
 
 \subsection{The Scope of the Work and the Product}
+The project will only operate on Google Chrome. It will also only operate on Twitter and Facebook. The filtering is based on text that is read and it will not work for videos or images without text or tags. The search will only occur on Instagram.
 
 \subsubsection{The Context of the Work}
 
@@ -88,22 +92,29 @@ User characteristics should go under assumptions.
 \section{Non-functional Requirements}
 
 \subsection{Look and Feel Requirements}
+Rather is intended to have a sleek feel with the removed images. This means when an image is replaced with a more desirable image it should be approximately the same size as the original. This will prevent the image from appearing stretched or squashed and not looking aesthetically pleasing. Rather will be written so that the images do not take a long time to buffer. This will prevent loading images from freezing the user's computer and putting the unsightely loading screen as its replacement. 
 
 \subsection{Usability and Humanity Requirements}
+The user needs to have a computer with Google Chrome installed. The user needs to either be able to have vision or have some software that will read the application options to them. The user needs to have social media accounts where they follow people for the application to have images to replace. 
 
 \subsection{Performance Requirements}
-
+Rather should complete image replacement in under 5 seconds. It should not freeze the user's computer. 
 \subsection{Operational and Environmental Requirements}
 
 \subsection{Maintainability and Support Requirements}
+Rather will be written in a way such that as long as there are not major changes in the source code of Facebook or Twitter the application will still function as expected. The developers will not maintain support for this application after the course is ocmpelted.
 
 \subsection{Security Requirements}
+The developers will not collect or store the user's information from social media. The developer's will not use malware or virus's in the application. There will not be a limit to what the user can filter. They are responsible for ensuring they are using appropriate replacement tags. 
 
 \subsection{Cultural Requirements}
+Rather is not responsible for the choice of replacement image used. It is the user's responsibility to ensure they are respecting other cultures with tier replacement images.
 
 \subsection{Legal Requirements}
+Rather will only collect publically shared images. They do not own any images used. 
 
 \subsection{Health and Safety Requirements}
+The user is responsible for using correct form well operating their computer. It is not Rather's responsibility for any mistagged images. If the user experiences emotional distress from seeing an improperly tagged image Rather is not responsible. 
 
 This section is not in the original Volere template, but health and safety are
 issues that should be considered for every engineering project.
@@ -111,20 +122,26 @@ issues that should be considered for every engineering project.
 \section{Project Issues}
 
 \subsection{Open Issues}
+There are not currently any issues with the Rather_2 repository. The orignal repository has two open issues that have not been addressed. The one for meme filter we will not address. The addition of an optional filter by name on Facebook we will attempt to implement. 
 
 \subsection{Off-the-Shelf Solutions}
 
-\subsection{New Problems}
+\subsection{New Problems}\
+the application no longer works for Facebook. This issue will be resolved in the new version.
 
 \subsection{Tasks}
 
 \subsection{Migration to the New Product}
+The new product will operate the same as the original. If the new feature is added the user will recieve an update blurb with an explanation on how to operate it. 
 
 \subsection{Risks}
+There are no risk associated with developing this.
 
 \subsection{Costs}
+There are no cost associated with this project aside from electricity used to work on this on our computers, and time. 
 
 \subsection{User Documentation and Training}
+There is a brief explanation blurb when the user installs rather. The application has subtitles that allow the user to find their block list and replacement list without having to re-read the blurb. No training is required.
 
 \subsection{Waiting Room}
 
