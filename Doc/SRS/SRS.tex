@@ -88,11 +88,21 @@ User characteristics should go under assumptions.
 The project will operate exclusively on Google Chrome, more specifically the sites Twitter and Facebook. The filtering is based on text that is read and it will not work for videos or images without text or tags. The search will only occur on Instagram. The code will be tested using Q-unit a Javascript package that allows unit testing.
 
 \subsubsection{The Context of the Work}
+Rather will operate under the assumptions that users have a fundamental basis in computer usage. It will also operate on the basis of users being familiar with Google Chrome and Google Chrome Extensions. The user will also have to be on either Facebook and Twitter for Rather to work, and ideally (not required) be familiar with Facebook and Twitter. The application will follow thecontrol flow diagram shown below:
+
 
 \subsubsection{Work Partitioning}
+Work will be partitioned according to \href{../DevelopmentPlan/Dev_Plan_Rev0.gan}{Gantt chart}. All project milestones and division of labour wills tay up to date in the chart.
 
 \subsubsection{Individual Product Use Cases}
-
+\begin{itemize}
+  \item A user encounters an annoying social media trend that is inhibiting their experience, or overwhelming their social media content. The user uses rather to remove these posts.
+  \item A user suffering from PTSD is afraid to engage in social media due to images that may trigger unwanted memories. The user uses rather to replace undesirable content with soothing images.
+  \item A user wishes to remain friends with another social media user, however does not like the content they post. Rather is used to remove the indesirable person's content from their feed, effectively ignoring the person in ana undetectable manner.
+  \item A user is bored and wishes to replace as many posts on his feed with cats as possible.
+  \item 
+  
+\end{itemize}
 
 \subsection{Functional Requirements}
 \begin{itemize}
@@ -112,7 +122,7 @@ The project will operate exclusively on Google Chrome, more specifically the sit
 Rather is intended to have a sleek feel with the removed images. This means when an image is replaced with a more desirable image it should be approximately the same size as the original. This will prevent the image from appearing stretched or squashed and not looking aesthetically pleasing. Rather will be written so that the images do not take a long time to buffer. This will prevent loading images from freezing the user's computer and putting the unsightely loading screen as its replacement. 
 
 \subsection{Usability and Humanity Requirements}
-The user needs to have a computer with Google Chrome installed. The user needs to either be able to have vision or have some software that will read the application options to them. The user needs to have social media accounts where they follow people for the application to have images to replace. The program must save the user's defined kill lists in order to all
+The user needs to have a computer with Google Chrome installed. The user needs to either be able to have vision or have some software that will read the application options to them. The user needs to have social media accounts where they follow people for the application to have images to replace. The program must save the user's defined kill lists in order to make use of the program in the future easier. If the program encounters an error, it will disable itself such that the user's content is not undesirably altered.
 
 \subsection{Performance Requirements}
 Rather should complete image replacement in under T seconds. It should not freeze the user's browser. T may vary depending on the user's system, however T must be less than or equal to the average load time of the initial page the program is operating on.
@@ -146,7 +156,7 @@ There are not currently any issues with the project repository. The orignal repo
 A potential solution is that name can be identified in the source code. The filter function can have a if option to skip certain names.
 
 \subsection{New Problems}
-the application no longer works for Facebook. This issue will be resolved in the new version.
+The application no longer works for Facebook. This issue will be resolved in the new version. There is also an identity risk with use of the app, as it can be used to inaccurately represent a person in terms of the content that they are posting.
 
 \subsection{Tasks}
 
