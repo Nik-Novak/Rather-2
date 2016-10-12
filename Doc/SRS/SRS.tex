@@ -3,6 +3,7 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{hyperref}
+\usepackage{enumitem}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -73,7 +74,7 @@ The additional Stakeholder's in this project are anyone else who wishes to parti
 The project must respect user privacy; refrain from recording or storing any data from the user's social media feeds. Even if this is not done with malicious intent, it is wise to avoid this practice to ensure there is nothing contentious about the program.
 
 \subsection{Naming Conventions and Terminology}
-The project will use a common naming convention for all files, functions, variables and constants. Files will be formally named with underscores instead of spaces. Functions will have no spaces, the first word is not capitalized, and all subsequent words are capitalized. Variables have no spaces, with all words capitalized. Constants are written in all capital letters. A Hash Tag is an image tag that is used to describe what an image is. For instance an image of someone's dog would be tagged dog. This is the only indrustry terminology referenced in this document.  
+The project will use a common naming convention for all files, functions, variables and constants. Files will be formally named with underscores instead of spaces. Functions will have no spaces, the first word is not capitalized, and all subsequent words are capitalized. Variables have no spaces, with all words capitalized. Constants are written in all capital letters. A Hash Tag is an image tag that is used to describe what an image is. For instance an image of someone's dog would be tagged dog. This is the only industry terminology referenced in this document.  
 
 \subsection{Relevant Facts and Assumptions}
 User must be able to read, use a computer, and have a Facebook and/or Twitter account. User must also have Google Chrome installed, and have a basic understanding of how extensions work for said browser.
@@ -82,8 +83,9 @@ User characteristics should go under assumptions.
 
 \section{Functional Requirements}
 
+
 \subsection{The Scope of the Work and the Product}
-The project will only operate on Google Chrome. It will also only operate on Twitter and Facebook. The filtering is based on text that is read and it will not work for videos or images without text or tags. The search will only occur on Instagram. The code will be tested using Q-unit a Javascript package that allows unit testing.
+The project will operate exclusively on Google Chrome, more specifically the sites Twitter and Facebook. The filtering is based on text that is read and it will not work for videos or images without text or tags. The search will only occur on Instagram. The code will be tested using Q-unit a Javascript package that allows unit testing.
 
 \subsubsection{The Context of the Work}
 
@@ -91,7 +93,18 @@ The project will only operate on Google Chrome. It will also only operate on Twi
 
 \subsubsection{Individual Product Use Cases}
 
+
 \subsection{Functional Requirements}
+\begin{itemize}
+  \item The program shall take as input a set of key words specified by the user, known as a kill list. The user may specify multiple kill lists.
+  \item The program shall likewise take as input from the user a set of words defining replacement content, known as replacement keys.
+  \item The program shall take as input from the user an option to either mute or replace post content
+  \item The program shall be able to identify individual posts on both Facebook and Instagram, and will only be active when the user visits these sites.
+  \item The program shall perform a search for key words found both in the displayed text of the post as well as in any tags within the post's context to determine related content. The search shall encompass all of the user's posts visually displayed on the social media site.
+  \item After a post containing a keyword is found, the program will be able to identify any images within the post.
+  \item Depending on the user's preference of mute or replace, all images and text within the post's context will be either removed from view or replaced by images defined by replacement keys respectively.
+  \item The program shall allow the user to undo any changes to individual posts without requiring a refresh.
+\end{itemize}
 
 \section{Non-functional Requirements}
 
@@ -99,10 +112,10 @@ The project will only operate on Google Chrome. It will also only operate on Twi
 Rather is intended to have a sleek feel with the removed images. This means when an image is replaced with a more desirable image it should be approximately the same size as the original. This will prevent the image from appearing stretched or squashed and not looking aesthetically pleasing. Rather will be written so that the images do not take a long time to buffer. This will prevent loading images from freezing the user's computer and putting the unsightely loading screen as its replacement. 
 
 \subsection{Usability and Humanity Requirements}
-The user needs to have a computer with Google Chrome installed. The user needs to either be able to have vision or have some software that will read the application options to them. The user needs to have social media accounts where they follow people for the application to have images to replace. 
+The user needs to have a computer with Google Chrome installed. The user needs to either be able to have vision or have some software that will read the application options to them. The user needs to have social media accounts where they follow people for the application to have images to replace. The program must save the user's defined kill lists in order to all
 
 \subsection{Performance Requirements}
-Rather should complete image replacement in under 5 seconds. It should not freeze the user's computer. 
+Rather should complete image replacement in under T seconds. It should not freeze the user's browser. T may vary depending on the user's system, however T must be less than or equal to the average load time of the initial page the program is operating on.
 \subsection{Operational and Environmental Requirements}
 The user should have the necessary computer input devices. This includes a mouse or keyboard. The user needs an environment with WIFI where they are able to operate a computer.
 
