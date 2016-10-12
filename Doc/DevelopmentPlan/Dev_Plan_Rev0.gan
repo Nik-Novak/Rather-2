@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Rather_2" company="McMaster 3XA3" webLink="https://gitlab.cas.mcmaster.ca/novakn/Rather_2.git" view-date="2016-09-11" view-index="0" gantt-divider-location="579" resource-divider-location="300" version="2.8.1" locale="en_US">
+<?xml version="1.0" encoding="UTF-8"?><project name="Rather_2" company="McMaster 3XA3" webLink="https://gitlab.cas.mcmaster.ca/novakn/Rather_2.git" view-date="2016-09-11" view-index="0" gantt-divider-location="579" resource-divider-location="300" version="2.8.1" locale="en_CA">
     <description><![CDATA[Gantt project for highlighting millstones and resource allocation throughtout the project.]]></description>
     <view zooming-state="default:5" id="gantt-chart">
-        <field id="tpd3" name="Name" width="266" order="0"/>
-        <field id="tpd4" name="Begin date" width="155" order="1"/>
-        <field id="tpd5" name="End date" width="154" order="2"/>
+        <field id="tpd3" name="Name" width="259" order="0"/>
+        <field id="tpd4" name="Begin date" width="151" order="1"/>
+        <field id="tpd5" name="End date" width="150" order="2"/>
     </view>
     <view id="resource-table">
         <field id="0" name="Name" width="210" order="0"/>
@@ -33,11 +33,11 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="2" name="Team Formation" color="#000000" meeting="false" start="2016-09-12" duration="5" complete="0" expand="false">
+        <task id="2" name="Team Formation" color="#000000" meeting="false" start="2016-09-12" duration="5" complete="50" expand="false">
             <depend id="6" type="2" difference="0" hardness="Strong"/>
             <depend id="11" type="2" difference="0" hardness="Strong"/>
             <task id="3" name="Setup Repo" color="#8cb6ce" meeting="false" start="2016-09-12" duration="5" complete="0" expand="true"/>
-            <task id="4" name="Project Lead Selection" color="#8cb6ce" meeting="false" start="2016-09-12" duration="5" complete="0" expand="true">
+            <task id="4" name="Project Lead Selection" color="#8cb6ce" meeting="false" start="2016-09-12" duration="5" complete="100" expand="true">
                 <depend id="0" type="2" difference="0" hardness="Strong"/>
             </task>
         </task>
