@@ -1,8 +1,21 @@
-function trigger(word){
+document
+    .getElementById('files')
+    .addEventListener(
+        'change',
+        function () {
+            var fr = new FileReader();
+            fr.onload = function () {
+                document.getElementById('contents').textContent = this.result;
+            };
+            fr.readAsText(this.files[0]);
+        }
+    );
+
+/*var triggerInput = $('#trigger')
 var fileInput = $('#files');
 var uploadButton = $('#upload');
 
-uploadButton.on('click', function() {
+uploadButton.on('click', function()) {
     if (!window.FileReader) {
         alert('Your browser is not supported');
         return false;
@@ -19,7 +32,7 @@ uploadButton.on('click', function() {
         $(reader).on('load', processFile);
     } else {
         alert('Please upload a file before continuing')
-    } 
+    }
 });
 
 function processFile(e) {
@@ -28,13 +41,10 @@ function processFile(e) {
     if (file && file.length) {
         results = file.split("\n");
 	for(i=0; i<results.length ; i++){
-		if(results[i] == word){
+		if(results[i] == triggerInput){
 			results[i] = "Trigger word found";
-        		$('#name').val(results[i]);
-        		$('#age').val(results[i]);
-    
+        		document.write(results[i] + "<br>")
+
 		}
 	}
-   }
-}
-}
+*/

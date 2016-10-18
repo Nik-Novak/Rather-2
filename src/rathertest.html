@@ -12,18 +12,25 @@
 <script src="scripts/main.js"></script>
 <br>
 <br>
-<input type=text id=trigger>
-<br>
-<br>
 <script src="scripts/main2.js"></script>
 <br>
 <br>
 <input type=file id=files />
-<button id=upload>Rather-ify</button>
-<br>
-<br>
-<output type=text id=original />
-<br>
-<output type=text id=modified />
+<pre id=contents></pre>
+<script>
+document
+    .getElementById('files')
+    .addEventListener(
+        'change',
+        function () {
+            var fr = new FileReader();
+            fr.onload = function () {
+                document.getElementById('contents').textContent = this.result;
+            };
+            fr.readAsText(this.files[0]);
+        }
+    );
+</script>
+
 </body>
 </html>
