@@ -24,8 +24,6 @@ function replace(block_text, replace_text){
                 
                 var wordchoice = Math.floor(Math.random()*replace_words.length);
                 
-                //console.log("WORD CHOICE: " + wordchoice);
-                
                 var re = new RegExp(block_regstr,"gi");
                 var replacedText = text.replace(re, replace_words[wordchoice]);
 
@@ -41,7 +39,7 @@ console.log("Tested");
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-    console.log(sender.tab ?
+    console.log(sender.tab ?  //console.log(sender.tab ?
                 "from a content script:" + sender.tab.url :
                 "from the extension");
     if (request.message_id == "submit"){
