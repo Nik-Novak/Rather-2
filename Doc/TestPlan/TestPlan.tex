@@ -167,6 +167,36 @@ Output: The page will be reloaded and all the filtering will occur as expected. 
 How test will be performed: The input will be inserted through the GUI for the web application. It will search the text and <img> tags for the filtering. Any tweets from the exception user will NOT be removed in the modified source code. A search will be performed comparing the source code to ensure this occurred.
 \end{enumerate}
 \subsection{Tests for Nonfunctional Requirements}
+\subsubsection{Application Security Testing}
+\item{test-id1\\}
+*******JOEL SECTION
+Type: Functional, Dynamic, Manual, Static etc. ***********************
+					
+Initial State: Fully Loaded Dog Wikipedia Page
+					
+Input: Words to block: Dog, Canine
+Words to replace with: Elephant, Rooster
+Exceptions?: 3XA3TEST
+					
+Output: The Wikipedia page will be reloaded with all the dog images removed and replace with an image tagged with Elephant or Rooster. Since Wikipedia is not a social media website selective filtering does not apply. No additional changes should occur with this test case.
+					
+How test will be performed: The input will be inserted through the GUI for the web application. It will search the page to ensure the exception has not been removed if it existed in the original source code.
+					
+\item{test-id2\\}
+Type: Functional, Dynamic, Manual, Static etc.
+					
+Initial State: A pre-made Twitter page that will be used for testing. The page will consist of  a series tweets involving commonly used key words. The link is attached below:
+
+As seen this page contains a series of Tweets with various key words that will be used for testing.
+					
+Input:  Words to block: Donald Trump
+Words to replace with: Puppies
+Exceptions?: 3XA3TEST
+					
+Output: The page will be reloaded and all the filtering will occur as expected. However any tweets that were created by the user listed under exceptions will not be filtered.
+
+How test will be performed: The input will be inserted through the GUI for the web application. It will search the text and <img> tags for the filtering. Any tweets from the exception user will NOT be removed in the modified source code. A search will be performed comparing the source code to ensure this occurred.
+\end{enumerate}
 \subsubsection{Response Time}
 		
 \paragraph{Does the program take to long to execute?}
@@ -224,6 +254,33 @@ Input/Condition: No user input, just open the web application
 Output/Result: All of the focus group members will give the visual at least a 7/10 in order for this test case to pass.
 					
 How test will be performed: The focus group memeber will perform the test. They will then rank the reloaded page out of 10.
+\end{enumerate}
+\subsubsection{Failure Response Testingl}
+\item{test-id1\\}
+The program should be able to encounter errors without crashing the user's browser. Error Catching will be covered here.
+
+Type:
+Initial State: Wikipedia page for Dogs
+					
+Input/Condition: Input: Words to block: .*
+Words to replace with: Elephant, Rooster
+Exceptions?: 
+					
+Output/Result: The regular expression will replace everything on the page with one of the replacement words. This is a massive amount of replacement and can cause the page to crash. The program should be able to handle the new output without creating an error on the browser.
+					
+How test will be performed: This is difficult to decifer using automation so the focus group will have to be used. The actual performing of the test can be automated but someone will need to visually verify if the page crashed.
+\end{enumerate}
+\item{test-id2\\}
+Type:
+Initial State: Test Twitter Page
+					
+Input/Condition: Words to block: .*
+Words to replace with: Elephant, Rooster
+Exceptions?: 
+					
+Output/Result: Everything on the page should be replaced with the words or tagged images without the page crashing. Response time will also be noted in this as serious lag is also considered crashing.
+					
+How test will be performed: The occurance can be automated but the yes no of the page crashing needs to be noted subjectively by the focus group.
 \end{enumerate}
 \section{Tests for Proof of Concept}
 \subsection{Area of Testing1}
