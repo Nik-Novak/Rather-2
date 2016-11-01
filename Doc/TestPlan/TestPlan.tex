@@ -1,6 +1,7 @@
 \documentclass[12pt, titlepage]{article}
 \usepackage{booktabs}
 \usepackage{tabularx}
+\usepackage{amsmath}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks,
@@ -321,9 +322,19 @@ How test will be performed: The script will load the wikipedia page and insert t
 \subsection{Area of Testing2}
 ...
 	
-\section{Comparison to Existing Implementation}	
+\section{Comparison to Existing Implementation}
+The new implementation of rather is aiming to make the existing implementation obsolete. This implementation shall incorporate all of the existing implementation's features, however it will expand on the feature set to include features such as image filtering and image text recognition. The new program's behaviour relative to the existing can be modelled as follows:
+
+\begin{multline}
+\forall test \in TestCases, test\_existing(test) \wedge output(test\_existing(test)) != null  \rightarrow  \\ 
+output(test\_existing(test)) == output(test\_new(test))
+\end{multline}
+
+In other words, any output produced by the original program must exist as the same output in the new implementation. However, this effect is not conversely true, as there will be additional outputs in the new program not present in the old.
+
 				
 \section{Unit Testing Plan}
+
 		
 \subsection{Unit testing of internal functions}
 		
