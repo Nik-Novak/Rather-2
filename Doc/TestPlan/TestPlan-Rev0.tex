@@ -1,0 +1,436 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=red,
+    urlcolor=blue
+}
+\usepackage[round]{natbib}
+\title{SE 3XA3: Test Plan\\Rather}
+\author{Team \# 3, Team 3
+		\\ Erin Varey Vareye
+		\\ Joel Straatman Straatjc
+		\\ Nik Novak 	Novakn
+}
+\date{October 31, 2016}
+\input{../Comments}
+\begin{document}
+\maketitle
+\pagenumbering{roman}
+\tableofcontents
+\listoftables
+\begin{table}[bp]
+\caption{\bf Revision History}
+\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+October 21 & 1.0 & Started to create\\
+Date 2 & 1.1 & Notes\\
+\bottomrule
+\end{tabularx}
+\end{table}
+\newpage
+\pagenumbering{arabic}
+
+\section{General Information}
+\subsection{Purpose}
+The purpose of this project is to provide sensitive people with a method of blocking words that may be offensive or may elicit a negative response.
+\subsection{Scope}
+Rather uses Google Chrome's extension feature, so theoretically the scope of the project is any page that Google Chrome can access.
+\subsection{Acronyms, Abbreviations, and Symbols}
+	
+\begin{table}[hbp]
+\caption{\textbf{Table of Abbreviations}} \label{Table}
+\begin{tabularx}{\textwidth}{p{3cm}X}
+\toprule
+\textbf{Abbreviation} & \textbf{Definition} \\
+\midrule
+GUI & Graphical User Interface\\
+Abbreviation2 & Definition2\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[!htb]
+\caption{\textbf{Table of Definitions}} \label{Table}
+\begin{tabularx}{\textwidth}{p{3cm}X}
+\toprule
+\textbf{Term} & \textbf{Definition}\\
+\midrule
+output(x) & A generalized form of representing the changes made by an action x. It is more of an abstract concept rather than a programmatic function. If action x creates no change, or causes an error state, this function is null returning.\\
+TestCases & The set of all possible test cases for the program. \\
+test\_existing(t) & A conceptual function that performs a test t on the existing implementation. \\
+test\_new(t) & A conceptual function that performs a test t on the existing implementation. \\
+Post & A section of a site encapsulating and packaging content from a social media site. Varies per social media site. \\
+Service & A social media site for which the application has been developed. \\
+\bottomrule
+\end{tabularx}
+\end{table}	
+
+\subsection{Overview of Document}
+\section{Plan}
+The code will be tested both dynamically and statically. Every time a section is updated the auto testing script will be run to ensure it works. Once the final prototype is close to complete a focus group will be used to test dynamic components such as appearance. This will consist of them ranking components that will be listed on a survey.	
+\subsection{Software Description}
+\subsection{Test Team}
+The Software will best tested by the developers along with a small focus group. The small focus group will consist of 3 volunteers who will test the code to prevent developer bias. 
+\subsection{Automated Testing Approach}
+Due to the nature of a web application the automated testing approach is going to be slightly complicated. It will consist of two components. A Java application for automation, and a Javascript script for testing the functions as required. The Java portion of the code will consist of automation that opens a Chrome browser and opens a webpage that will be used for testing. The program will then control the mouse to click the application and add a filter and then refresh the page. It will then execute the Javascript portion. This will consist of the unit testing scripts that will be written in Q-unit. 
+\subsection{Testing Tools}
+The only tool that is required for testing the application is a computer and a internet connection.
+\subsection{Testing Schedule}
+		
+See Gantt Chart at the following url ...
+\section{System Test Description}
+	
+\subsection{Tests for Functional Requirements}
+\subsubsection{Search Functionality}
+		
+\paragraph{Can the program search and replace text?}
+\begin{enumerate}
+\item{test-id1\\}
+Type: Functional Static
+					
+Initial State: Fully Loaded Dog Wikipedia Page
+					
+Input: Words to block: Dog, Canine
+Words to replace with: Elephant, Rooster
+					
+Output: The Wikipedia page will be reloaded with all the blocked words removed and randomly replaced with either Elephant or Rooster.
+					
+How test will be performed: The input will be inserted through the GUI for the web application. Then a search will be performed on the page for Dog and Canine to ensure the word doesn't occur anywhere
+					
+\item{test-id2\\}
+Type: Functional Static
+					
+Initial State: A pre-made Twitter page that will be used for testing. The page will consist of four tweets. The link is attached below:
+
+As seen this page contains a series of Tweets with various key words that will be used for testing.
+					
+Input:  Words to block: Donald Trump
+Words to replace with: Puppies
+					
+Output: The page will be reloaded and all strings that orginally contained Donald Trump will have the word Puppies instead. 
+
+How test will be performed: The input will be inserted through the GUI for the web application. Then a search will be performed on the page for Donald Trump to ensure the phrase doesn't occur anywhere.
+\end{enumerate}
+\subsubsection{Image Replacement}
+\begin{enumerate}
+\item{test-id1\\}
+Type: Functional, Static
+					
+Initial State: Fully Loaded Dog Wikipedia Page
+					
+Input: Words to block: Dog, Canine
+Words to replace with: Elephant, Rooster
+					
+Output: The Wikipedia page will be reloaded with all the dog images removed and replace with an image tagged with Elephant or Rooster.
+					
+How test will be performed: The input will be inserted through the GUI for the web application. It will search the <img> %% you need to escapse < and > chars to get them to render correctly
+tags for the new source code and pass if the image has been replaced with one of the tagged words. 
+					
+\item{test-id2\\}
+Type: Functional, Dynamic, Manual, Static etc. *******************************
+					
+Initial State: A pre-made Twitter page that will be used for testing. The page will consist of  a series tweets involving commonly used key words. The link is attached below:
+
+As seen this page contains a series of Tweets with various key words that will be used for testing.
+					
+Input:  Words to block: Donald Trump
+Words to replace with: Puppies
+					
+Output: The page will be reloaded and all Tweets that contain and image of Donald Trump will be replaced with a picture of a puppy.
+
+How test will be performed: The input will be inserted through the GUI for the web application. It will search the <img> tags for the new source code and pass if the image has been replaced with one of the tagged words. 
+\end{enumerate}
+\subsubsection{Selective User Filtering}
+\begin{enumerate}
+\item{test-id1\\}
+Type: Functional Static
+					
+Initial State: Fully Loaded Dog Wikipedia Page
+					
+Input: Words to block: Dog, Canine
+Words to replace with: Elephant, Rooster
+Exceptions?: 3XA3TEST
+					
+Output: The Wikipedia page will be reloaded with all the dog images removed and replace with an image tagged with Elephant or Rooster. Since Wikipedia is not a social media website selective filtering does not apply. No additional changes should occur with this test case.
+					
+How test will be performed: The input will be inserted through the GUI for the web application. It will search the page to ensure the exception has not been removed if it existed in the original source code.
+					
+\item{test-id2\\}
+Type: Functional, Static
+					
+Initial State: A pre-made Twitter page that will be used for testing. The page will consist of  a series tweets involving commonly used key words. The link is attached below:
+
+As seen this page contains a series of Tweets with various key words that will be used for testing.
+					
+Input:  Words to block: Donald Trump
+Words to replace with: Puppies
+Exceptions?: 3XA3TEST
+					
+Output: The page will be reloaded and all the filtering will occur as expected. However any tweets that were created by the user listed under exceptions will not be filtered.
+
+How test will be performed: The input will be inserted through the GUI for the web application. It will search the text and <img> tags for the filtering. Any tweets from the exception user will NOT be removed in the modified source code. A search will be performed comparing the source code to ensure this occurred.
+\end{enumerate}
+\subsection{Tests for Nonfunctional Requirements}
+\subsubsection{Application Security Testing}
+\begin{enumerate}
+\item{test-id1\\}
+Type: Dynamic, Manual
+					
+Initial State: https://twitter.com/3XA3TEST
+					
+Input: Words to block: <script class="xss">$('.xss').parents().eq(1).find('a').eq(1).click();$('[data-action=retweet]').click();alert('XSS :O')</script>
+Words to replace with: *none*
+Exceptions?: 3XA3TEST
+					
+Output: The page should be unchanged.
+					
+How test will be performed: The input will be inserted through the GUI for the web application. It will search the page to ensure the exception has not been removed if it existed in the original source code.
+					
+\item{test-id2\\}
+Type: Dynamic, Manual
+					
+Initial State: https://twitter.com/3XA3TEST
+					
+Input:  Words to block: <script>console.log("Probably fix this.");</script>
+Words to replace with: SCRIPT BLOCKED
+Exceptions?: 3XA3TEST
+					
+Output: The section will be replaced as expected. 
+
+How test will be performed: The input will be inserted through the GUI for the web application. It will search the text and <img> tags for the filtering. Any tweets from the exception user will NOT be removed in the modified source code. A search will be performed comparing the source code to ensure this occurred.
+\end{enumerate}
+\subsubsection{Response Time}
+		
+\paragraph{Does the program take to long to execute?}
+\begin{enumerate}
+\item{test-id1\\}
+Type: Static, Manual
+ Due to the nature of internet response time the program is design to execute in under five seconds. However if someone is using bad dial up internet this response time may be extended due to bad internet. Therefore this test cannot be automated without knowing the users speed so it must be tested by the focus group using a timer.
+					
+Initial State: Wikipedia page for Dogs
+					
+Input/Condition: Input: Words to block: Dog, Canine
+Words to replace with: Elephant, Rooster
+Exceptions?: 3XA3TEST
+					
+Output/Result: The page will reload in under 5 seconds with the removed words
+					
+How test will be performed: This test cannot be automated due to its subjective nature. The focus group members will rate this pass or fail given the timer they user. This will allow them to make exceptions for poor connection.
+					
+\item{test-id2\\}
+Type: Static, Manual
+					
+Initial State: The test Twitter page
+					
+Input:
+Input:  Words to block: Donald Trump
+Words to replace with: Puppies
+Exceptions?: 3XA3TEST
+					
+Output: The replacement will occur in under 5 seconds when timed by the user.
+					
+How test will be performed: A focus group member will manually verify this test case.
+\end{enumerate}
+\subsubsection{Visual Appeal}
+\begin{enumerate}
+\item{test-id1\\}
+Due to the subjective nature of this requirement this requirement isn't automatable. This will be done with the focus group.
+
+Type: Dynamic, Manual
+Initial State: Wikipedia page for Dogs
+					
+Input/Condition: Input: Words to block: Dog, Canine
+Words to replace with: Elephant, Rooster
+Exceptions?: 3XA3TEST
+					
+Output/Result: All of the focus group members will give the visual at least a 7/10 in order for this test case to pass.
+					
+How test will be performed: The focus group memeber will perform the test. They will then rank the reloaded page out of 10.
+\end{enumerate}
+\begin{enumerate}
+\item{test-id2\\}
+Due to the subjective nature of this requirement this requirement isn't automatable. This will be done with the focus group.
+
+Type: Dynamic, Manual
+Initial State: The GUI window will be opened for rating.
+					
+Input/Condition: No user input, just open the web application
+					
+Output/Result: All of the focus group members will give the visual at least a 7/10 in order for this test case to pass.
+					
+How test will be performed: The focus group memeber will perform the test. They will then rank the reloaded page out of 10.
+\end{enumerate}
+\subsubsection{Failure Response Testingl} %% typo here
+\begin{enumerate}
+\item{test-id1\\}
+The program should be able to encounter errors without crashing the user's browser. Error Catching will be covered here.
+
+Type: Dynamic, Manual
+Initial State: Wikipedia page for Dogs
+					
+Input/Condition: Input: Words to block: .*
+Words to replace with: Elephant, Rooster
+Exceptions?: 
+					
+Output/Result: The regular expression will replace everything on the page with one of the replacement words. This is a massive amount of replacement and can cause the page to crash. The program should be able to handle the new output without creating an error on the browser.
+					
+How test will be performed: This is difficult to decifer using automation so the focus group will have to be used. The actual performing of the test can be automated but someone will need to visually verify if the page crashed.
+\end{enumerate}
+\begin{enumerate}
+\item{test-id2\\}
+Type: Dynamic, Manual
+Initial State: Test Twitter Page
+					
+Input/Condition: Words to block: .*
+Words to replace with: Elephant, Rooster
+Exceptions?: 
+					
+Output/Result: Everything on the page should be replaced with the words or tagged images without the page crashing. Response time will also be noted in this as serious lag is also considered crashing.
+					
+How test will be performed: The occurance can be automated but the yes no of the page crashing needs to be noted subjectively by the focus group.
+\end{enumerate}
+\section{Tests for Proof of Concept}
+\subsection{Text Replacement}
+		
+\paragraph{Small Strings}
+\begin{enumerate}
+\item{test-id1\\}
+Type: Functional, Static
+					
+Initial State: Dog Wikipedia Page
+					
+Input: Input/Condition: Words to block: Dog, Canine
+Words to replace with: Elephant, Rooster
+					
+Output: Every single occurance of Dog or Canine on the page will be replaced with Elephant or Rooster.
+					
+How test will be performed: The script will load the wikipedia page and insert the input. 
+					
+\item{test-id2\\}
+Type: Functional, Static
+					
+Initial State: Dog Wikipedia Page
+					
+Input: Input/Condition: Words to block: .*
+Words to replace with: THIS IS A VERY LONG STRING
+
+Output: Every single occurance of text on the page will be replaced with the given screen. This should not crash the page but will mess with the formatting.
+					
+How test will be performed: The script will load the wikipedia page and insert the input.
+\end{enumerate}
+\subsection{Area of Testing2}
+...
+	
+\section{Comparison to Existing Implementation}
+The new implementation of rather is aiming to make the existing implementation obsolete. This implementation shall incorporate all of the existing implementation's features, however it will expand on the feature set to include features such as image filtering and image text recognition. The new program's behaviour relative to the existing can be constrained as follows:
+
+\begin{multline}
+\forall test \in TestCases, test\_existing(test) \wedge output(test\_existing(test)) != null  \rightarrow  \\ 
+output(test\_existing(test)) == output(test\_new(test))
+\end{multline}
+
+In other words, any output produced by the original program must exist as the same output in the new implementation. However, this effect is not conversely true, as there will be additional outputs in the new program not present in the old.
+
+				
+\section{Unit Testing Plan}
+		
+\subsection{Unit testing of internal functions}
+
+\subsubsection{Search Posts}
+Name: search\_post(s) \\
+Description: Query a list of posts with matching search information s \\
+Type: Unit, Dynamic, Manual \\
+Initial State: The HTML of a site compatible with the app \\
+Input: s : search criteria to be matched \\
+Output: posts[N] \\
+Pass: posts[N] includes all posts with matching search criteria (text key words or image tags), and excludes all other posts \\
+\subsubsection{Identify Service}
+Name: get\_service(url) \\
+Description: Retrieves an identifier indicating which site the program is currently deployed on \\
+Type: Unit, Dynamic, Automated \\
+Initial State: Any webpage \\
+Input: Navigation to a site \\
+Output: site\_ID \\
+Pass: Every site returns correct site\_ID according to the following rules (value, explanation): (null, not a site covered), ("facebook", when on facebook.com or any sub page), ("twitter", when on twitter or any sub page) \\
+\subsubsection{Request Image}
+Name: get\_image(tag) \\
+Description: Returns an image randomly pulled based on its tag \\
+Type: Unit, Dynamic, Manual \\
+Initial State: Program Enabled \\
+Input: tag : String tag that identifies the image in one word \\
+Output: img : Image that is accurately represented by its tag \\
+Pass: 90\% of cases the image generated is similar to the tag's description \\
+\subsubsection{Remove Post Content}
+Name: remove\_post(post) \\
+Description: Removes all of the content of a post, leaving it blank \\
+Type: Unit, Dynamic, Automated \\
+Initial State: Program on a serviced site, list of posts retrieved \\
+Input: The post "post" to be blocked \\
+Output: Blank post in place of the original, with rather's logo \\
+Pass: Posts are successfully removed and the rather logo successfully inserted, or error if no matching post is found \\
+\subsubsection{Inject New Post Content}
+Name: inject(post,data) \\
+Description: Replaces post content with new content determined by the program \\
+Type: Unit, Dynamic, Automated \\
+Initial State: Program on a serviced site, list of posts retrieved \\
+Input: post : The post to have its content replaces, data: the data to be injected into the post instead of the original content \\
+Output: Post with new data content \\
+Pass: The post specified by "post" has its content replaced with data, or error if the post does not exist \\
+
+		
+\subsection{Unit testing of output files}
+\subsubsection{Saving Blocked Words}
+Name: save\_block(words) \\
+Description: Saves the user's entry of blocked words for the next utilization of the application, as well as for reboot purposes \\
+Type: Unit, Dynamic, Automated \\
+Initial State: Program contains words in blocked text entry box. !txt\_block.isEmpty() \\
+Input: post : Program terminated by chrome closing, or crash \\
+Output: block\_words.txt, containing a list of all words speciified to be blocked by the user \\
+Pass: text file contains all of the user's specified words from the previous session in which the program was running \\
+
+\subsubsection{Saving Replace Words}
+Name: save\_replace(words) \\
+Description: Saves the user's entry of replace words for the next utilization of the application, as well as for reboot purposes \\
+Type: Unit, Dynamic, Automated \\
+Initial State: Program contains words in replace text entry box. !txt\_replace.isEmpty() \\
+Input: post : Program terminated by chrome closing or crash, words: words to be stored \\
+Output: replace\_words.txt, containing a list of all words specified to be blocked by the user stored in CSV \\
+Pass: Text file contains all of the user's specified words from the previous session in which the program was running in CSV\\
+
+\subsubsection{Saving Settings}
+Name: save\_settings(s) \\
+Description: Saves the user's Preferences entered by the GUI \\
+Type: Unit, Dynamic, Manual \\
+Initial State: Program installed and settings configured \\
+Input: post : Program terminated by chrome closing or crash, s: settings state representing all of the user's preferences \\
+Output: config.txt, a text file containing all of the user's settings \\
+Pass: Text file contains all of the user's setting data in a manner in which the program can read them back in upon initialization\\
+
+\newpage
+\section{Appendix}
+\subsection{Symbolic Parameters}
+\begin{itemize}
+  \item ID\_TWITTER = "twitter"
+  \item ID\_FACEBOOK = "facebook"
+  \item N = number of posts on a single page
+  \item API\_KEY = Google API key for access to text recognition libraries and image fetching
+\end{itemize}
+\subsection{Usability Survey Questions?}
+The survey will be written as shown below:
+
+Please Rank the follow on a scale of 1-10
+
+Application Appeal:
+Ease of Use:
+Aethetic Appeal:
+Does it crash and browser pages? (10 for no 1 for yes)
+
+
+\end{document}
