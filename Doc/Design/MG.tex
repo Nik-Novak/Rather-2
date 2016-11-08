@@ -25,10 +25,10 @@
 \newcommand{\mthemnum}{M\themnum}
 \newcommand{\mref}[1]{M\ref{#1}}
 \title{SE 3XA3: Software Requirements Specification\\Title of Project}
-\author{Team \#, Team Name
-		\\ Student 1 name and macid
-		\\ Student 2 name and macid
-		\\ Student 3 name and macid
+\author{Team \#, Team 3
+		\\ Erin Varey, Vareye
+		\\ Nik Novak, Novakn
+		\\ Joel Straatman, Straatjc
 }
 \date{\today}
 \input{../../Comments}
@@ -106,12 +106,27 @@ inside the modules. Ideally, changing one of the anticipated changes will only
 require changing the one module that hides the associated decision. The approach
 adapted here is called design for
 change.
+
+Due to API compatability issues any code that relies on an outside API is maintained in its own module. This means particular social media API's need to be kept hidden from one another so if there is modifications that affect the original it will not affect the application as a whole. This means there will be three replacement modules:
+
+Facebook feed replacer.
+Twitter feed replacer.
+Replacer for all other websites.
+
+Additionally the image replacement software will need to be kept seperate due to relying on API's. The image replacer relies on instagram RS feeds to obtain images. Image recognition software for identification of memes also replies on an API and will be needed to be kept modular from the rest of the modules. 
 \begin{description}
 \item[\refstepcounter{acnum} \actheacnum \label{acHardware}:] The specific
   hardware on which the software is running.
+
+There is minimal hardware required for Rather to run. It requires a laptop that is able to access Google Chrome. There are minimal input devices required. Some form of text communicator is required. This could be done through a keyboard or a speech to text convertor. Additionally some sort of selction input device is required such as a mouse. These are unlikely to change drastically anytime soon and will not accounted for in the design 
 \item[\refstepcounter{acnum} \actheacnum \label{acInput}:] The format of the
   initial input data.
-\item ...
+\item The input data is sourced from the internet and user input. 
+
+User input:
+The user is required to input items to filter, and a desired replacement. This is done through strings that are communicated textually.
+
+Internet: There is a variety of input required from the webpages the user interacts with. There is the source code that will be obtained from every single webpage used. There is also input that is communicated from webpages that do not contain all the information in the source code. Additionally due to webpages being loaded dynamically, frequent reloading of the source code is required so the application will continue to interact with webpage. Some webpages have unique streamlet like information that will replace the entire webpage rather than the individual feed. The actual streamlet information will need to be uniquely obtained. This will be done for Facebook, and Twitter. These each have API's that have been previously developed and supported to give this information.  
 \end{description}
 \subsection{Unlikely Changes} \label{SecUchange}
 The module design should be as general as possible. However, a general system is
@@ -123,6 +138,10 @@ decisions will be changed.
 \begin{description}
 \item[\refstepcounter{ucnum} \uctheucnum \label{ucIO}:] Input/Output devices
   (Input: File and/or Keyboard, Output: File, Memory, and/or Screen).
+
+The input will always be done textually. This hardware input method is unlikely to change anytime soon.
+
+The output will be done through a screen and internet. These are pieces of hardware that are unlikely to be modified anytime soon. It is assumed there will always be a visual output for the user, and that webpages will always contain source code.
 \item[\refstepcounter{ucnum} \uctheucnum \label{ucInput}:] There will always be
   a source of input data external to the software.
 \item ...
