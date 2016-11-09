@@ -151,9 +151,11 @@ This section provides an overview of the module design. Modules are summarized
 in a hierarchy decomposed by secrets in Table \ref{TblMH}. The modules listed
 below, which are leaves in the hierarchy tree, are the modules that will
 actually be implemented.
+
+Due to the nature of javascript code, modules are not often used. We used modules by having seperate javascript files that performed each action. These wll be treated as modules in 
 \begin{description}
 \item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Hardware-Hiding Module
-\item ...
+\item There are no hardware hiding modules on this project. The hardware will not affect how the code operates provided that there is something that matches the input and output style. 
 \end{description}
 \begin{table}[h!]
 \centering
@@ -164,17 +166,17 @@ actually be implemented.
 {Hardware-Hiding Module} & ~ \\
 \midrule
 \multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\ 
-& ?\\
+& Twitter-API.js\\
+& Facebook-API.js\\
+&Filter-Feature.js\\
+&Detect-Website.js\\
+& page.js\\
+& popup.js\\
+& content.js\\
 \midrule
-\multirow{3}{0.3\textwidth}{Software Decision Module} & {?}\\
-& ?\\
-& ?\\
+\multirow{3}{0.3\textwidth}{Non Java-script Modules and Design modules} & {?}\\
+& manifest.json\\
+& popup.html \\
 \bottomrule
 \end{tabular}
 \caption{Module Hierarchy}
@@ -184,6 +186,39 @@ actually be implemented.
 The design of the system is intended to satisfy the requirements developed in
 the SRS. In this stage, the system is decomposed into modules. The connection
 between requirements and modules is listed in Table \ref{TblRT}.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{p{0.3\textwidth} p{0.6\textwidth}}
+\toprule
+\textbf{Level 1} & \textbf{Level 2}\\
+\midrule
+{Module and requirements} & ~ \\
+\midrule
+\multirow{7}{0.3\textwidth}{Functional} & ?\\
+& Twitter-API.js -> Allow the user to block specific items in their twitter feed\\
+& Facebook-API.js -> Allow the user to block specific items in their newsfeed\\
+&Filter-Feature.js -> allow the user to filter individual post they do not want censored\\
+&Detect-Website.js -> aLlow the user to block items on specific web feeds. (Will allow functionality for twitter and facebook)\\
+$Image.js ->If a keyword is found images containing or tagged with it will be filtered\\
+& page.js -> Basic functionality of loading the webpage. Not part of requirements but is part of the functional code\\
+& popup.js -> Allow the user to filter content on websites that are not twitter and facebook\\
+& content.js -> Allow the user to detect both content and tags related to a word\\
+& popup.html -> Allow the user to input a "kill list" of words they want to remove\\
+& popup.html -> Allow the user to input a "replacementl list" of words they want to remove\\
+& popup.html -> Allow the user an option to mute or replace content\\
+\midrule
+\multirow{3}{0.3\textwidth}{Non-Functional} & {?}\\
+& manifest.json -> performance requirements\\
+& popup.html -> Allow the program to have a sleek look and feel//
+
+\bottomrule
+\end{tabular}
+\caption{The modules that satisfies each requirement is listed}
+\label{TblMH}
+\end{table}
+
+
 \section{Module Decomposition} \label{SecMD}
 Modules are decomposed according to the principle of ``information hiding''
 proposed by \citet{ParnasEtAl1984}. The \emph{Secrets} field in a module
@@ -216,14 +251,14 @@ selected.
   documents. This module serves as a communication layer between the
   hardware-hiding module and the software decision module. The programs in this
   module will need to change if there are changes in the SRS.
-\item[Implemented By:] --
+\item[Implemented By:] Facebook-API.js, Twitter-API.js, Filter-Feauture.js, content.js, popup.html
 \end{description}
 \subsubsection{Input Format Module (\mref{mInput})}
 \begin{description}
 \item[Secrets:]The format and structure of the input data.
 \item[Services:]Converts the input data into the data structure used by the
   input parameters module.
-\item[Implemented By:] [Your Program Name Here]
+\item[Implemented By:] popup.html, content.js
 \end{description}
 \subsubsection{Etc.}
 \subsection{Software Decision Module}
@@ -235,7 +270,7 @@ selected.
   do not provide direct interaction with the user. 
   % Changes in these modules are more likely to be motivated by a desire to
   % improve performance than by externally imposed changes.
-\item[Implemented By:] --
+\item[Implemented By:] Detect-Website.js, page.js
 \end{description}
 \subsubsection{Etc.}
 \section{Traceability Matrix} \label{SecTM}
