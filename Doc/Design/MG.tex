@@ -31,7 +31,6 @@
 		\\ Joel Straatman, Straatjc
 }
 \date{\today}
-\input{../../Comments}
 \begin{document}
 \maketitle
 \pagenumbering{roman}
@@ -148,7 +147,7 @@ The output will be done through a screen and internet. These are pieces of hardw
 \end{description}
 \section{Module Hierarchy} \label{SecMH}
 This section provides an overview of the module design. Modules are summarized
-in a hierarchy decomposed by secrets in Table \ref{TblMH}. The modules listed
+in a hierarchy decomposed by secrets in Table 1. The modules listed
 below, which are leaves in the hierarchy tree, are the modules that will
 actually be implemented.
 
@@ -185,7 +184,7 @@ Due to the nature of javascript code, modules are not often used. We used module
 \section{Connection Between Requirements and Design} \label{SecConnection}
 The design of the system is intended to satisfy the requirements developed in
 the SRS. In this stage, the system is decomposed into modules. The connection
-between requirements and modules is listed in Table \ref{TblRT}.
+between requirements and modules is listed in Table 3.
 
 \begin{table}[h!]
 \centering
@@ -200,7 +199,7 @@ between requirements and modules is listed in Table \ref{TblRT}.
 & Facebook-API.js -> Allow the user to block specific items in their newsfeed\\
 &Filter-Feature.js -> allow the user to filter individual post they do not want censored\\
 &Detect-Website.js -> aLlow the user to block items on specific web feeds. (Will allow functionality for twitter and facebook)\\
-$Image.js ->If a keyword is found images containing or tagged with it will be filtered\\
+&Image.js ->If a keyword is found images containing or tagged with it will be filtered\\
 & page.js -> Basic functionality of loading the webpage. Not part of requirements but is part of the functional code\\
 & popup.js -> Allow the user to filter content on websites that are not twitter and facebook\\
 & content.js -> Allow the user to detect both content and tags related to a word\\
@@ -210,7 +209,7 @@ $Image.js ->If a keyword is found images containing or tagged with it will be fi
 \midrule
 \multirow{3}{0.3\textwidth}{Non-Functional} & {?}\\
 & manifest.json -> performance requirements\\
-& popup.html -> Allow the program to have a sleek look and feel//
+& popup.html -> Allow the program to have a sleek look and feel\\
 
 \bottomrule
 \end{tabular}
