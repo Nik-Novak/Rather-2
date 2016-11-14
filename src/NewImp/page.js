@@ -1,6 +1,7 @@
-//_5pbx userContent = all post usercontents
-function replace_entire_page(block_text, replace_text){
-    var elements = document.getElementsByTagName('*');
+
+function replace(block_text, replace_text){
+    var elements = document.getElementsByClassName("*");
+    console.log(elements);
     var block_words = block_text.split(",");
     var replace_words = replace_text.split(",");
     
@@ -21,7 +22,7 @@ function replace_entire_page(block_text, replace_text){
 
             if (node.nodeType === 3) {
                 var text = node.nodeValue;
-                
+                console.log("YOOOO");
                 var wordchoice = Math.floor(Math.random()*replace_words.length);
                 
                 var re = new RegExp(block_regstr,"gi");
@@ -36,20 +37,28 @@ function replace_entire_page(block_text, replace_text){
     console.log("Successfully Replaced");
 }
 
-function replace_facebook_post_blank(block_text){
-    var elements = document.getElementsByTagName('');
+function replace_facebook_blank(){
+    var elements = document.getElementsByClassName("userContent");
+    var strings; //= elements.getAttribute("innerText");
+    for (var i=0; i<elements.length; i++ )
+        if(elements[i].childNodes[0]!=null){
+            elements[i].childNodes[0].nodeValue="Hello";
+            console.log("Success!")
+        }
+    //console.log(strings);
 }
 
 console.log("Tested");
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-    console.log(sender.tab ? 
+    console.log(sender.tab ?  //console.log(sender.tab ?
                 "from a content script:" + sender.tab.url :
                 "from the extension");
     if (request.message_id == "submit"){
       sendResponse({farewell: "goodbye"});
         console.log("Block Values: " + request.block + "    Replace Values: " + request.replace);
-      //replace_entire_page(request.block, request.replace); //entire page
+        //replace_facebook_blank();
+      replace(request.block, request.replace);
     }
   });
