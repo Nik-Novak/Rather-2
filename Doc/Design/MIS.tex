@@ -1,0 +1,165 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage{fullpage}
+\usepackage[round]{natbib}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=red,
+    urlcolor=blue
+}
+\usepackage[round]{natbib}
+\newcounter{acnum}
+\newcommand{\actheacnum}{AC\theacnum}
+\newcommand{\acref}[1]{AC\ref{#1}}
+\newcounter{ucnum}
+\newcommand{\uctheucnum}{UC\theucnum}
+\newcommand{\uref}[1]{UC\ref{#1}}
+\newcounter{mnum}
+\newcommand{\mthemnum}{M\themnum}
+\newcommand{\mref}[1]{M\ref{#1}}
+\title{SE 3XA3: Software Requirements Specification\\Module Interface Specification}
+\author{Team \#, Team 3
+		\\ Erin Varey, Vareye
+		\\ Nik Novak, Novakn
+		\\ Joel Straatman, Straatjc
+}
+\date{\today}
+\begin{document}
+\maketitle
+\pagenumbering{roman}
+\tableofcontents
+\listoftables
+\begin{table}[bp]
+\caption{\bf Revision History}
+\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+Date 1 & 1.0 & Notes\\
+Date 2 & 1.1 & Notes\\
+\bottomrule
+\end{tabularx}
+\end{table}
+\newpage
+\pagenumbering{arabic}
+\section{Introduction}
+Module Interface Specification is a necessary component in the design of Rather. The decomposition of the program through modules allows for various changes to be anticipated by abstracting various processes and required components. Many components specific to a certain API are subject to frequent change, especially social media related API's. Below is the Module Interface Specification for the Chrome extension Rather.
+
+\section{Popup Module}
+Popup.js is the isolated javascript module that interacts with popup.html. It controls the main interface with the user and is in charge of passing messages to the page context javascript files. Methods from this class are always invoked upon user interaction.
+
+Interface (public entities)
+\subsection{send\_tags()}
+Sends the set of tags input by the user on the chrome extension’s main HTML. Communicates through message passing across Chrome’s security border. 
+\subsection{send\_blockwords()}
+Sends the set of blockwords input by the user on the chrome extension’s main HTML. Communicates through message passing across Chrome’s security border.
+\subsection{send\_settings()}
+Sends a settings packet from Settings.js. Used to determine program functionality based on options stored in packet. Settings are sent on any update of user settings.
+\subsection{on\_click()}
+Called when an item in the HTML is interacted with.  Subsequently calls on\_update(event) with the appropriate event identifier.
+\subsection{on\_update(event)}
+Called anytime the user interacts with the main interfaceand causes a notable change. The event variable determines the occuring event and on\_update performs the appropriate message passing to the main page-context program.
+
+
+\section{Page Module}
+Page is the main controller script, used to control information flow and general program structure. It is at the top od the module hierarchy, and passes mesasges with the main chrome extension HTML.
+
+Interface (public entities)
+\subsection{receive\_tags()}
+Requests the set of tags input by the user on the chrome extension’s main HTML. Communicates through message passing across Chrome’s security border.
+\subsection{receive\_blockwords()}
+Requests the set of blockwords input by the user on the chrome extension’s main HTML. Communicates through message passing across Chrome’s security border.
+\subsection{receive\_settings()}
+Requests a settings packet from Settings.js. Used to determine program functionality based on options stored in packet.
+\subsection{load\_tags()}
+Called when tags are updated by on\_update() of popup.js. Searches and re-injects all posts using subsequent inject() methods determined by the service\_visited variable
+\subsection{save\_tags()}
+On program successful termination, save\_tags is called to ensure tag words are properly loaded at next runtime
+\subsection{load\_blockwords()}
+Requests the set of words to filter, stored by previous runtime and updates the user's blockwords text box
+\subsection{determine\_service()}
+Determines which API to utilize based on current tab's address bar; and calling the subsequent service API's inject method. If no known service is recognized, Default-API's inject method is called.
+\subsection{load\_filter()}
+Loads the set of names to exclude from filtering, leaving implementation to the Filter-Feature.js's load\_names()
+\subsection{save\_filter()}
+Saves the set of names to exclude from filtering, leaving implementation to the Filter-Feature.js's save\_names()
+
+
+\section{Filter-Feature Module}
+Filter-Feature.js is the module for adding the implementation of filtering certain names from post-injecting. 
+
+Interface (public entities)
+\subsection{load\_names()}
+Loads the list of names to  be disregarded during injection. The list is stored in a CSV formatted text file FilterNames.csv.
+\subsection{save\_names()}
+Saves the list of names to  be disregarded during injection. The list is stored in a CSV formatted text file FilterNames.csv, overwritten each time.
+\subsection{clear\_all()}
+Removes all names from the filter, as well as from offline storage by deletion of FilterNames.csv
+
+\section{Twitter-API Module}
+API for implementation of Twitter specific post filtering. In the event that Twitter's HTML structure changes, this module is the only change required.
+
+Interface (public entities)
+\subsection{search\_posts(keywords)}
+Called when Page.js determines it is on a page. Returns the list of all posts with content matching the keywords provided.
+\subsection{inject(settings\_packet)}
+Calls search\_posts(keywords) to determine the list of posts to be replaced, then based on settings in settings\_packet and filter-feature, will inject content determined by Content.js to replace the post content.
+
+\section{Facebook-API Module}
+API for implementation of Facebook specific post filtering. In the event that Facebook's HTML structure changes, this module is the only change required.
+
+Interface (public entities)
+\subsection{search\_posts(keywords)}
+Called when Page.js determines it is on a page. Returns the list of all posts with content matching the keywords provided.
+\subsection{inject(settings\_packet)}
+Calls search\_posts(keywords) to determine the list of posts to be replaced, then based on settings in settings\_packet and filter-feature, will inject content determined by Content.js to replace the post content.
+
+\section{Default-API Module}
+Default-API for content injection. In the event that a service is not recognized, every child node of an HTML document containing Javscript text\_fields and containing keywords will be removed.
+
+Interface (public entities)
+\subsection{inject(settings\_packet)}
+Based on settings in settings\_packet and filter-feature, will inject content determined by Content.js to replace any text node containing tags from within the settings\_packet
+
+\section{Detect-Website Module}
+This Module determines the service visited by the user in the current tab, and maps it to a specific service\_ID. Other modules may use this identifier in determining which implementation to use for post content editing.
+
+Interface (public entities)
+\subsection{detect()}
+The main method for detection of the site or service being visited. This module uses the page's HTML structure to determine the service. If the service is undeterminable through HTML structure, it calls upon parse\_address() to determine the site. If parse\_address and HTML content detection fail, Default-API's identifier is returned. Otherwise the site specific identifier is returned.
+\subsection{parse\_address()}
+Retrieves the current tab's address bar content and attempt to determine the service or site being visited based on its string content. Returns the appropriate identifier.
+
+\section{Settings Module}
+Settings Module for storing any user settings selected by the user.
+\subsection{receive\_settings()}
+Returns a settings packet for determination of program behaviour based on user settings. Packet is null if no settings are present. Calls all subsequent load\_* methods in this module to retrieve the settings information.
+\subsection{load\_tags()}
+Specific implementation of retrieving tags input by the user out to a text file, previously stored. May be called at any time by Page.js
+\subsection{save\_tags()}
+Specific implementation of storing tags input by the user out to a text file, text file is overwritten each time. May be called at any time by Page.js
+\subsection{load\_blockwords()}
+Specific implementation of retrieving blockwords input by the user out to a text file, previously stored. May be called at any time by Page.js
+\subsection{save\_blockwords()}
+Specific implementation of storing blockwords input by the user out to a text file. May be called at any time by Page.js
+
+\section{Content Module}
+The Content module determines which content will be replacing a post marked for injection. Typical replacement content includes: images. Highly subject to change and additions such as text replacements.
+\subsection{image(keyword)}
+Retrieves an image based on var keyword, for post injection. Implementation is left to Image.js's image\_retrieve(keyword)
+
+\section{Image Module}
+Image module abstracts the implementation of retrieving images for Content Module. Uses RSS feed to retrieve images based on keywords
+\subsection{init()}
+Initializes RSS feed image retrieval API
+\subsection{image(keyword)}
+Retrieves a list of images based on var keyword, for post injection, using an instagram RSS Feed. Returns said lsit with a mazimum size of N images, determined in settings.
+
+
+\end{document}
