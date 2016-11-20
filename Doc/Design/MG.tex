@@ -143,7 +143,7 @@ The input will always be done textually. This hardware input method is unlikely 
 The output will be done through a screen and internet. These are pieces of hardware that are unlikely to be modified anytime soon. It is assumed there will always be a visual output for the user, and that webpages will always contain source code.
 \item[\refstepcounter{ucnum} \uctheucnum \label{ucInput}:] There will always be
   a source of input data external to the software.
-\item ...
+\item ... % what's this?
 \end{description}
 \section{Module Hierarchy} \label{SecMH}
 This section provides an overview of the module design. Modules are summarized
@@ -164,7 +164,7 @@ Due to the nature of javascript code, modules are not often used. We used module
 \midrule
 {Hardware-Hiding Module} & ~ \\
 \midrule
-\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & ?\\
+\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & ?\\ % why the question mark?
 & Twitter-API.js\\
 & Facebook-API.js\\
 &Filter-Feature.js\\
@@ -173,7 +173,8 @@ Due to the nature of javascript code, modules are not often used. We used module
 & popup.js\\
 & content.js\\
 \midrule
-\multirow{3}{0.3\textwidth}{Non Java-script Modules and Design modules} & {?}\\
+% javascript doesn't have a hyphen in it
+\multirow{3}{0.3\textwidth}{Non Java-script Modules and Design modules} & {?}\\ % why the question mark?
 & manifest.json\\
 & popup.html \\
 \bottomrule
@@ -252,7 +253,7 @@ selected.
   module will need to change if there are changes in the SRS.
 \item[Implemented By:] Facebook-API.js, Twitter-API.js, Filter-Feauture.js, content.js, popup.html
 \end{description}
-\subsubsection{Input Format Module (\mref{mInput})}
+\subsubsection{Input Format Module (\mref{mInput})} %% this doesn't get rendered correctly
 \begin{description}
 \item[Secrets:]The format and structure of the input data.
 \item[Services:]Converts the input data into the data structure used by the
@@ -271,7 +272,7 @@ selected.
   % improve performance than by externally imposed changes.
 \item[Implemented By:] Detect-Website.js, page.js
 \end{description}
-\subsubsection{Etc.}
+\subsubsection{Etc.} %% "Etc." ?
 \section{Traceability Matrix} \label{SecTM}
 This section shows two traceability matrices: between the modules and the
 requirements and between the modules and the anticipated changes.
@@ -286,7 +287,7 @@ requirements and between the modules and the anticipated changes.
 R1 &  popup.html\\
 R2 &  popup.html\\
 R3 &  popup.html\\
-R4 &  Facebook-API.js, Twttier-API.js, Detect-Website.js\\
+R4 &  Facebook-API.js, Twttier-API.js, Detect-Website.js\\ % "Twttier" ?
 R5 &  Image.js, Content.js\\
 R6 &  Image.js\\
 R7 &  Image.js, Content.js, Popup.js\\

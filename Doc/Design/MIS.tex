@@ -56,9 +56,11 @@ Popup.js is the isolated javascript module that interacts with popup.html. It co
 
 Interface (public entities)
 \subsection{send\_tags()}
-Sends the set of tags input by the user on the chrome extension’s main HTML. Communicates through message passing across Chrome’s security border. 
+Sends the set of tags input by the user on the chrome extension’s main HTML. Communicates through message passing across Chrome’s % this apostrophe doesn't get rendered! 
+security border. 
 \subsection{send\_blockwords()}
-Sends the set of blockwords input by the user on the chrome extension’s main HTML. Communicates through message passing across Chrome’s security border.
+Sends the set of blockwords input by the user on the chrome extension’s main HTML. Communicates through message passing across Chrome’s % same here
+security border.
 \subsection{send\_settings()}
 Sends a settings packet from Settings.js. Used to determine program functionality based on options stored in packet. Settings are sent on any update of user settings.
 \subsection{on\_click()}
@@ -68,7 +70,8 @@ Called anytime the user interacts with the main interfaceand causes a notable ch
 
 
 \section{Page Module}
-Page is the main controller script, used to control information flow and general program structure. It is at the top od the module hierarchy, and passes mesasges with the main chrome extension HTML.
+Page is the main controller script, used to control information flow and general program structure. It is at the top od % typo
+the module hierarchy, and passes mesasges with the main chrome extension HTML.
 
 Interface (public entities)
 \subsection{receive\_tags()}
