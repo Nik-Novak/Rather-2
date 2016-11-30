@@ -16,6 +16,7 @@ function replace(block_text, replace_text){
     console.log("content!");
     
     var block_words = block_text.split(",");
+    replace_text +="";
     var replace_words = replace_text.split(",");
     //Parse Reg Exp for all replacements
     var block_regstr = "";
@@ -27,10 +28,10 @@ function replace(block_text, replace_text){
     //end parse
     
     //text pos removal
-    //var textmarked = mark_remove_text(elements, block_regstr);
-    //remove_text(textmarked, elements);
+    var textmarked = mark_remove_text(elements, block_regstr);
+    remove_text(textmarked, elements);
     
-    block_image(block_regstr);
+    block_image(block_regstr); //IMAGES
     
     //while(imagesFetching>0)
         //console.log("Looping, imagesFetching = " + imagesFetching );
@@ -42,8 +43,41 @@ function replace(block_text, replace_text){
 
 function remove_text(textmarked, elements){
     for (var i=0; i<textmarked.length; i++){
+        if(safe_listed(elements[textmarked[i]]))
+            continue;
         elements[textmarked[i]].innerHTML = null;
+        inject_gif(elements[textmarked[i]]);
     }
+}
+
+function safe_listed(post){
+    var name_container = post.getElementsByClassName("clearfix");
+    var name = name_container[1].getElementsByTagName("a")[0].text;
+    console.log(name);
+    if(name == "chen fghgfd")
+        return true;
+    return false;
+}
+
+function inject_gif(post){
+    chrome.runtime.sendMessage({message_id: "gif_request"}, function(response) {
+        post.innerHTML=null;
+            var img = document.createElement("img");
+        img.src = response.gif_url; //--replace image
+        img.id = "hellotest";
+        img.onload = function () {
+            img.style.width = '100%';
+        }
+        
+        //img.style.margin = "0 auto";
+        
+//        img.display = "block";
+//        img.margin = "0 auto";
+//        img.align = "middle";
+        
+        post.appendChild(img);
+  console.log(response.gif_url);
+});
 }
 
 function mark_remove_text(elements, block_regstr){
@@ -201,11 +235,7 @@ function removePost(index, json, block_regstr){
             elements[index].innerHTML=null;
         }
         else{
-            elements[index].innerHTML=null;
-            var img = document.createElement("img");
-        img.src = "http://imgur.com/download/cl24nXb"; //--replace image
-        elements[index].appendChild(img);
-            injectErr(elements[index]);
+            inject_gif(elements[index]);
         }
         
     }
@@ -251,7 +281,6 @@ chrome.runtime.onMessage.addListener(
                 "from a content script:" + sender.tab.url :
                 "from the extension");
     if (request.message_id == "submit"){
-      sendResponse({farewell: "goodbye"});
         console.log("Block Values: " + request.block + "    Replace Values: " + request.replace);
         c_mute = Boolean(request.mute);
         

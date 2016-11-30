@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+
+  "name": "Proof of Concept",
+  "description": "This extension shows a Google Image search result for the current page",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon2.png",
+    "default_popup": "rather.html"
+  },
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/",
+    "https://*.com/",
+    "http://*.com/"
+  ],
+    
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "js": [
+                "page.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+    
+}
