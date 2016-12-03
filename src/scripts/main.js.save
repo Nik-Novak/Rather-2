@@ -1,0 +1,21 @@
+var myHeading =  document.querySelector('h1');
+myHeading.textContent = 'rather i guess?';
+
+document.write(
+  "Okay now that we have the basics<br>");
+document.write(
+  "I AM A GOD OF CODING"
+)
+document.write( "Here are a variety of words being used to test"
+)
+document.write("Snake, cat, dog, house, grass, Donald Trump"
+)
+
+
+var reader = new FileReader();
+var textFile = input.files[0]
+read.readAsText(textFile);
+$(reader).on('load', processFike);
+
+
+

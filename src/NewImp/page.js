@@ -54,7 +54,7 @@ function safe_listed(post){
     var name_container = post.getElementsByClassName("clearfix");
     var name = name_container[1].getElementsByTagName("a")[0].text;
     console.log(name);
-    if(name == "chen fghgfd")
+    if(name == "Joel Straatman")
         return true;
     return false;
 }
