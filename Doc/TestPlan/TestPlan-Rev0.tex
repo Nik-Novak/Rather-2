@@ -183,7 +183,7 @@ How test will be performed: The input will be inserted through the GUI for the w
 \item{test-id1\\}
 Type: Dynamic, Manual
 					
-Initial State: https://twitter.com/3XA3TEST
+Initial State: https://Facebook.com/3XA3TEST
 					
 Input: Words to block: <script class="xss">$('.xss').parents().eq(1).find('a').eq(1).click();$('[data-action=retweet]').click();alert('XSS :O')</script>
 Words to replace with: *none*
@@ -222,7 +222,7 @@ Exceptions?: 3XA3TEST
 					
 Output/Result: The page will reload in under 5 seconds with the removed words
 					
-How test will be performed: This test cannot be automated due to its subjective nature. The focus group members will rate this pass or fail given the timer they user. This will allow them to make exceptions for poor connection.
+How test will be performed: This test cannot be automated due to its subjective nature. The focus group members will rate this pass or fail given the timer they use. This will allow them to make exceptions for poor connection.
 					
 \item{test-id2\\}
 Type: Static, Manual
@@ -250,7 +250,7 @@ Input/Condition: Input: Words to block: Dog, Canine
 Words to replace with: Elephant, Rooster
 Exceptions?: 3XA3TEST
 					
-Output/Result: All of the focus group members will give the visual at least a 7/10 in order for this test case to pass.
+Output/Result: The average result will be 7/10 or above in order for this test case to pass.
 					
 How test will be performed: The focus group memeber will perform the test. They will then rank the reloaded page out of 10.
 \end{enumerate}
@@ -263,17 +263,17 @@ Initial State: The GUI window will be opened for rating.
 					
 Input/Condition: No user input, just open the web application
 					
-Output/Result: All of the focus group members will give the visual at least a 7/10 in order for this test case to pass.
+Output/Result: The average result will be 7/10 or above in order for this test case to pass.
 					
 How test will be performed: The focus group memeber will perform the test. They will then rank the reloaded page out of 10.
 \end{enumerate}
-\subsubsection{Failure Response Testingl} %% typo here
+\subsubsection{Failure Response Testing} %% typo here
 \begin{enumerate}
 \item{test-id1\\}
 The program should be able to encounter errors without crashing the user's browser. Error Catching will be covered here.
 
 Type: Dynamic, Manual
-Initial State: Wikipedia page for Dogs
+Initial State: Facebook news feed
 					
 Input/Condition: Input: Words to block: .*
 Words to replace with: Elephant, Rooster
@@ -286,7 +286,7 @@ How test will be performed: This is difficult to decifer using automation so the
 \begin{enumerate}
 \item{test-id2\\}
 Type: Dynamic, Manual
-Initial State: Test Twitter Page
+Initial State: Test Facebook Page
 					
 Input/Condition: Words to block: .*
 Words to replace with: Elephant, Rooster
