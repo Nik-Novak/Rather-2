@@ -191,155 +191,122 @@ Output: The page should be unchanged.\\
 How test will be performed: The input will be inserted through the GUI for the web application. A developer will verify that script does not get executed.
 					
 \item{test-id2\\}
-Type: Dynamic, Manual
+Type: Dynamic, manual, non-functional\\
 					
-Initial State: https://Facebook.com/3XA3TEST
+Initial State: Facebook test page\\
 					
-Input:  Words to block: <script>console.log("Probably fix this.");</script>
-Words to replace with: SCRIPT BLOCKED
-Exceptions?: 3XA3TEST
+Input:  Words to block: <script>console.log("Probably fix this.");</script> \\
+Words to replace with:\\
+Exceptions? \\
+Mute?: No \\
 					
-Output: The section will be replaced as expected. 
+Output: The section will be replaced as expected.  \\
 
-How test will be performed: The input will be inserted through the GUI for the web application. It will search the text and <img> tags for the filtering. Any tweets from the exception user will NOT be removed in the modified source code. A search will be performed comparing the source code to ensure this occurred.
+How test will be performed: The input will be inserted through the GUI for the web application. It should ignore the script inserted in the list and no change anything on the webpage. A developer will manually verify this.
 \end{enumerate}
 \subsubsection{Response Time}
 		
 \paragraph{Does the program take to long to execute?}
 \begin{enumerate}
 \item{test-id1\\}
-Type: Static, Manual
- Due to the nature of internet response time the program is design to execute in under five seconds. However if someone is using bad dial up internet this response time may be extended due to bad internet. Therefore this test cannot be automated without knowing the users speed so it must be tested by the focus group using a timer.
-					
-Initial State: Wikipedia page for Dogs
-					
-Input/Condition: Input: Words to block: Dog, Canine
-Words to replace with: Elephant, Rooster
-Exceptions?: 3XA3TEST
-					
-Output/Result: The page will reload in under 5 seconds with the removed words
-					
+Type: Dynamic, manual, non-functional \\
+ Due to the nature of internet response time the program is design to execute in under five seconds. However if someone is using bad dial up internet this response time may be extended due to bad internet. Therefore this test cannot be automated without knowing the users speed so it must be tested by the focus group using a timer.\\				
+Initial State: Facebook test page\\
+Input/Condition: Input: Words to block: Dog \\
+Words to replace with: Elephant, Rooster\\
+Exceptions?: None \\
+Mute?: Yes		\\	
+Output/Result: The page will reload in under 5 seconds with everything removed that matches the tag.\\
 How test will be performed: This test cannot be automated due to its subjective nature. The focus group members will rate this pass or fail given the timer they use. This will allow them to make exceptions for poor connection.
 					
 \item{test-id2\\}
-Type: Static, Manual
-					
-Initial State: The test Twitter page
-					
-Input:
-Input:  Words to block: Donald Trump
-Words to replace with: Puppies
-Exceptions?: 3XA3TEST
-					
-Output: The replacement will occur in under 5 seconds when timed by the user.
-					
+Type: Dynamic, manual, non-functional\\		
+Initial State: The test Facebook page\\
+Input:  Words to block: Cat \\
+Words to replace with: Puppies \\
+Exceptions?: Nik Novak \\
+Mute?: No \\	
+Output: The replacement will occur in under 5 seconds when timed by the user. \\	
 How test will be performed: A focus group member will manually verify this test case.
 \end{enumerate}
 \subsubsection{Visual Appeal}
 \begin{enumerate}
 \item{test-id1\\}
-Due to the subjective nature of this requirement this requirement isn't automatable. This will be done with the focus group.
-
-Type: Dynamic, Manual
-Initial State: Wikipedia page for Dogs
-					
-Input/Condition: Input: Words to block: Dog, Canine
-Words to replace with: Elephant, Rooster
-Exceptions?: 3XA3TEST
-					
-Output/Result: The average result will be 7/10 or above in order for this test case to pass.
-					
+Due to the subjective nature of this requirement this requirement isn't automatable. This will be done with the focus group. \\
+Type: Dynamic, manual, non-functional \\
+Initial State: Facebook Testpage \\
+Input/Condition: Input: Words to block: Dog \\
+Words to replace with: Elephant, Rooster \\
+Exceptions?: Nik Novak\\
+Mute: No\\					
+Output/Result: The average result will be 7/10 or above in order for this test case to pass.\\					
 How test will be performed: The focus group memeber will perform the test. They will then rank the reloaded page out of 10.
 \end{enumerate}
 \begin{enumerate}
 \item{test-id2\\}
-Due to the subjective nature of this requirement this requirement isn't automatable. This will be done with the focus group.
-
-Type: Dynamic, Manual
-Initial State: The GUI window will be opened for rating.
-					
-Input/Condition: No user input, just open the web application
-					
-Output/Result: The average result will be 7/10 or above in order for this test case to pass.
-					
-How test will be performed: The focus group memeber will perform the test. They will then rank the reloaded page out of 10.
+Due to the subjective nature of this requirement this requirement isn't automatable. This will be done with the focus group. \\
+Type: Dynamic, manual, non functional \\
+Initial State: The GUI window will be opened for rating.\\
+Input/Condition: No user input, just open the web application \\
+Output/Result: The average result will be 7/10 or above in order for this test case to pass. \\
+How test will be performed: The focus group memeber will perform the test. They will then rank the reloaded page out of 10. An average above 7 will be required for a pass.
 \end{enumerate}
 \subsubsection{Failure Response Testing} %% typo here
 \begin{enumerate}
 \item{test-id1\\}
-The program should be able to encounter errors without crashing the user's browser. Error Catching will be covered here.
-
-Type: Dynamic, Manual
-Initial State: Facebook news feed
-					
-Input/Condition: Input: Words to block: .*
-Words to replace with: Elephant, Rooster
-Exceptions?: 
-					
-Output/Result: The regular expression will replace everything on the page with one of the replacement words. This is a massive amount of replacement and can cause the page to crash. The program should be able to handle the new output without creating an error on the browser.
-					
+The program should be able to encounter errors without crashing the user's browser. Error Catching will be covered here. \\
+Type: Dynamic, manual, non-functional \\
+Initial State: Facebook news feed \\
+Input/Condition: Input: Words to block: .* \\
+Words to replace with: Elephant, Rooster \\
+Exceptions?: \\
+Mute?: No\\					
+Output/Result: The regular expression will replace everything on the page with one of the replacement words. This is a massive amount of replacement and can cause the page to crash. The program should be able to handle the new output without creating an error on the browser.	\\				
 How test will be performed: This is difficult to decifer using automation so the focus group will have to be used. The actual performing of the test can be automated but someone will need to visually verify if the page crashed.
 \end{enumerate}
 \begin{enumerate}
 \item{test-id2\\}
-Type: Dynamic, Manual
-Initial State: Test Facebook Page
-					
-Input/Condition: Words to block: .*
-Words to replace with: Elephant, Rooster
-Exceptions?: 
-					
-Output/Result: Everything on the page should be replaced with the words or tagged images without the page crashing. Response time will also be noted in this as serious lag is also considered crashing.
-					
+Type: Dynamic, manual, non-functional \\
+Initial State: Test Facebook Page \\
+Input/Condition: Words to block: .* \\
+Words to replace with: Elephant, Rooster \\
+Exceptions?: \\
+Mute?: No \\			
+Output/Result: Everything on the page should be replaced with the words or tagged images without the page crashing. Response time will also be noted in this as serious lag is also considered crashing. \\		
 How test will be performed: The occurance can be automated but the yes no of the page crashing needs to be noted subjectively by the focus group.
 \end{enumerate}
 \section{Tests for Proof of Concept}
 \subsection{Text Replacement}
-		
 \paragraph{Small Strings}
 \begin{enumerate}
 \item{test-id1\\}
-Type: Functional, Static
-					
-Initial State: Dog Wikipedia Page
-					
-Input: Input/Condition: Words to block: Dog, Canine
-Words to replace with: Elephant, Rooster
-					
-Output: Every single occurance of Dog or Canine on the page will be replaced with Elephant or Rooster.
-					
-How test will be performed: The script will load the wikipedia page and insert the input. 
-					
+Type: Functional, dynamic, manual	 \\		
+Initial State: Facebook testfeed	\\
+Input: Input/Condition: Words to block: Dog \\
+Words to replace with: Elephant, Rooster \\
+Output: Every single occurance of dog on the page will be replaced with elephant or rooster. \\
+How test will be performed: The test will be performed manually by a team member.
 \item{test-id2\\}
-Type: Functional, Static
-					
-Initial State: Dog Wikipedia Page
-					
+Type: Functional, dynamic, manual \\
+Initial State: Test facebook feed \\
 Input: Input/Condition: Words to block: .*
 Words to replace with: THIS IS A VERY LONG STRING
-
-Output: Every single occurance of text on the page will be replaced with the given screen. This should not crash the page but will mess with the formatting.
-					
-How test will be performed: The script will load the wikipedia page and insert the input.
+Output: Every single occurance of text on the page will be replaced with the given screen. This should not crash the page but will mess with the formatting. \\
+How test will be performed: A team member will manually perform this test.
 \end{enumerate}
 \subsection{Area of Testing2}
-...
-	
 \section{Comparison to Existing Implementation}
-The new implementation of rather is aiming to make the existing implementation obsolete. This implementation shall incorporate all of the existing implementation's features, however it will expand on the feature set to include features such as image filtering and image text recognition. The new program's behaviour relative to the existing can be constrained as follows:
+The new implementation of rather is aiming to make the existing implementation obsolete. This implementation shall incorporate all of the existing implementation's features, however it will expand on the feature set to include features such as image filtering and image text recognition. The new program's behaviour relative to the existing can be constrained as follows: \\
+
+The final version when compared to the proof of concept version has been modifed to be limitted to operate only on Facebook. This should be a fully functional version of the original rather with the additional features of selective filtering, meme filters, and muting implemented. Additionally this should operate without breaking the loaded page due to the original being broken for Facebook.
 
 \begin{multline}
 \forall test \in TestCases, test\_existing(test) \wedge output(test\_existing(test)) != null  \rightarrow  \\ 
 output(test\_existing(test)) == output(test\_new(test))
 \end{multline}
-
-In other words, any output produced by the original program must exist as the same output in the new implementation. However, this effect is not conversely true, as there will be additional outputs in the new program not present in the old.
-
-				
-\section{Unit Testing Plan}
-		
+In other words, any output produced by the original program must exist as the same output in the new implementation. However, this effect is not conversely true, as there will be additional outputs in the new program not present in the old.				
+\section{Unit Testing Plan}	
 \subsection{Unit testing of internal functions}
-
 \subsubsection{Search Posts}
 Name: search\_post(s) \\
 Description: Query a list of posts with matching search information s \\
@@ -428,6 +395,7 @@ Application Appeal:
 Ease of Use:
 Aethetic Appeal:
 Does it crash and browser pages? (10 for no 1 for yes)
+Would you reccomend this application? (10 for yes 1 for no)
 
 
 \end{document}
