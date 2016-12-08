@@ -23,4 +23,4 @@ Installing is as easy as
 
 2)![Alt text](/ReferenceMaterial/install-2.jpg?raw=true "Install 2")
 
-3)
+3)![Alt text](/ReferenceMaterial/install-3.jpg?raw=true "Install 2")
