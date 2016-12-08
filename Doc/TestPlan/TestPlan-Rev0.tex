@@ -30,7 +30,7 @@
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
 October 21 & 1.0 & Started to create\\
-Date 2 & 1.1 & Notes\\
+December 7 & 1.1 & Final Document\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -41,7 +41,7 @@ Date 2 & 1.1 & Notes\\
 \subsection{Purpose}
 The purpose of this project is to provide sensitive people with a method of blocking words that may be offensive or may elicit a negative response.
 \subsection{Scope}
-Rather uses Google Chrome's extension feature, so theoretically the scope of the project is any page that Google Chrome can access.
+Rather is developed to work on Facebook that is being operated on Google Chrome.
 \subsection{Acronyms, Abbreviations, and Symbols}
 	
 \begin{table}[hbp]
@@ -51,7 +51,6 @@ Rather uses Google Chrome's extension feature, so theoretically the scope of the
 \textbf{Abbreviation} & \textbf{Definition} \\
 \midrule
 GUI & Graphical User Interface\\
-Abbreviation2 & Definition2\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -77,14 +76,16 @@ Service & A social media site for which the application has been developed. \\
 The code will be tested both dynamically and statically. Every time a section is updated the auto testing script will be run to ensure it works. Once the final prototype is close to complete a focus group will be used to test dynamic components such as appearance. This will consist of them ranking components that will be listed on a survey.	
 \subsection{Software Description}
 \subsection{Test Team}
-The Software will best tested by the developers along with a small focus group. The small focus group will consist of 3 volunteers who will test the code to prevent developer bias. 
+The Software will best tested by the developers along with a small focus group. The small focus group will consist of 10 volunteers who will test the code to prevent developer bias. 
 \subsection{Automated Testing Approach}
-Due to the nature of a web application the automated testing approach is going to be slightly complicated. It will consist of two components. A Java application for automation, and a Javascript script for testing the functions as required. The Java portion of the code will consist of automation that opens a Chrome browser and opens a webpage that will be used for testing. The program will then control the mouse to click the application and add a filter and then refresh the page. It will then execute the Javascript portion. This will consist of the unit testing scripts that will be written in Q-unit. 
+A lot of the code testing is difficult to automate so automation will only be done for basic portions of the code. Things such as saving list dynamically, and text searching will be automated. This is described in more detail below.
 \subsection{Testing Tools}
-The only tool that is required for testing the application is a computer and a internet connection.
+The JavaScript portion of the code will be tested using the Q-unit testing framework. 
 \subsection{Testing Schedule}
 		
-See Gantt Chart at the following url ...
+See Gantt Chart at the followiing location: \\
+Rather_2\Doc\DevelopmentPlan
+
 \section{System Test Description}
 	
 \subsection{Tests for Functional Requirements}
@@ -93,256 +94,219 @@ See Gantt Chart at the following url ...
 \paragraph{Can the program search and replace text?}
 \begin{enumerate}
 \item{test-id1\\}
-Type: Functional Static
+Type: Functional, dynamic, manual\\
 					
-Initial State: Fully Loaded Dog Wikipedia Page
+Initial State: Fully Loaded Facebook test page \\
 					
-Input: Words to block: Dog, Canine
-Words to replace with: Elephant, Rooster
+Input: Words to block: Dog, Canine \\
+Words to replace with: Elephant, Rooster\\
+Mute?: No \\
 					
-Output: The Wikipedia page will be reloaded with all the blocked words removed and randomly replaced with either Elephant or Rooster.
+Output: The Facebook page will be reloaded with all the blocked words removed and randomly replaced with either Elephant or Rooster.\\
 					
 How test will be performed: The input will be inserted through the GUI for the web application. Then a search will be performed on the page for Dog and Canine to ensure the word doesn't occur anywhere
 					
 \item{test-id2\\}
-Type: Functional Static
+Type: Functional, dynamic, manual\\
 					
-Initial State: A pre-made Facebook page that will be used for testing. The page will consist of four posts. The link is attached below:
+Initial State: A pre-made Facebook page that will be used for testing. The page will consist of four posts. The link is attached below:\\
+\href{https://www.facebook.com/groups/381406052200910/}\\
 
-As seen this page contains a series of posts with various key words that will be used for testing.
+As seen this page contains a series of posts with various key words that will be used for testing.\\
 					
-Input:  Words to block: Donald Trump
-Words to replace with: Puppies
+Input:  Words to block: Cat\\
+Words to replace with: Puppies\\
+Mute?: No \\
 					
-Output: The page will be reloaded and all strings that orginally contained Donald Trump will have the word Puppies instead. 
+Output: The page will be reloaded and all strings that orginally contained cat will have the word Puppies instead. \\
 
-How test will be performed: The input will be inserted through the GUI for the web application. Then a search will be performed on the page for Donald Trump to ensure the phrase doesn't occur anywhere.
+How test will be performed: The input will be inserted through the GUI for the web application. Then a search will be performed on the page for cat to ensure the phrase doesn't occur anywhere.
 \end{enumerate}
 \subsubsection{Image Replacement}
 \begin{enumerate}
 \item{test-id1\\}
-Type: Functional, Static
+Type: Functional, dynamic, manual\\
 					
-Initial State: Fully Loaded Facebook page
+Initial State: Fully Loaded Facebook page \\
 					
-Input: Words to block: Dog, Canine
-Words to replace with: Elephant, Rooster
+Input: Words to block: Dog, Canine \\
+Words to replace with: Elephant, Rooster  \\
+Mute?: No \\
 					
-Output: The Facebook page will be reloaded with all the dog images removed and replace with an image tagged with Elephant or Rooster.
+Output: The Facebook page will be reloaded with all the dog images removed and replace with an image tagged with Elephant or Rooster. \\
 					
-How test will be performed: The input will be inserted through the GUI for the web application. It will search the <img> %% you need to escapse < and > chars to get them to render correctly
-tags for the new source code and pass if the image has been replaced with one of the tagged words. 
+How test will be performed: The input will be inserted through the GUI for the web application. Gifs that match the requested tags will be inserted as a replacement. Developers will manually verify this occurred correctly without crashing the page.
 					
 \item{test-id2\\}
-Type: Functional, Dynamic, Manual, Static etc. *******************************
+Type: Functional, dynamic, manual \\
 					
-Initial State: A pre-made Facebook page that will be used for testing. The page will consist of  a series posts involving commonly used key words. The link is attached below:
+Initial State: Facebook test page \\
+					
+Input:  Words to block: Cat \\
+Words to replace with: Puppies \\
+Mute?: Yes \\
+					
+Output: The page will be reloaded and all pictures of cats will be removed.\\
 
-As seen this page contains a series of posts with various key words that will be used for testing.
-					
-Input:  Words to block: Donald Trump
-Words to replace with: Puppies
-					
-Output: The page will be reloaded and all Tweets that contain and image of Donald Trump will be replaced with a picture of a puppy.
-
-How test will be performed: The input will be inserted through the GUI for the web application. It will search the <img> tags for the new source code and pass if the image has been replaced with one of the tagged words. 
-\end{enumerate}
+How test will be performed: The input will be inserted through the GUI for the web application. The program will recognize any images that contain cats or have text in them containing the word and mute them.
 \subsubsection{Selective User Filtering}
 \begin{enumerate}
 \item{test-id1\\}
-Type: Functional Static
+Type: Functional, Dynamic, Manual \\			
+Initial State: Fully loaded Facebook test page \\		
+Input: Words to block: Dog \\
+Words to replace with: Elephant, Rooster \\
+Exceptions?: Nik Novak \\
+Mute:? No \\
 					
-Initial State: Fully loaded Facebook test page
+Output: The page will be reloaded with any dog images replaced with Gifs that are tagged with elephant or rooster. Any post created by Nik Novak will remain on the page. \\
 					
-Input: Words to block: Dog, Canine
-Words to replace with: Elephant, Rooster
-Exceptions?: Nik Novak
-					
-Output: The Wikipedia page will be reloaded with all the dog images removed and replace with an image tagged with Elephant or Rooster. Since Wikipedia is not a social media website selective filtering does not apply. No additional changes should occur with this test case.
-					
-How test will be performed: The input will be inserted through the GUI for the web application. It will search the page to ensure the exception has not been removed if it existed in the original source code.
+How test will be performed: The input will be inserted through the GUI for the web application. A developer will manually verify that any post by Nik Novak remain and that the images are correctly replaced.
 					
 \item{test-id2\\}
-Type: Functional, Static
+Type: Functional, Dynamic, Manual \\
 					
-Initial State: A pre-made Facebook page that will be used for testing. The page will consist of  a series posts involving commonly used key words. The link is attached below:
-
-As seen this page contains a series of posts with various key words that will be used for testing.
-					
-Input:  Words to block: Donald Trump
-Words to replace with: Puppies
-Exceptions?: Erin Varey
-					
-Output: The page will be reloaded and all the filtering will occur as expected. However any tweets that were created by the user listed under exceptions will not be filtered.
-
-How test will be performed: The input will be inserted through the GUI for the web application. It will search the text and <img> tags for the filtering. Any tweets from the exception user will NOT be removed in the modified source code. A search will be performed comparing the source code to ensure this occurred.
+Initial State: Facebook test page. \\			
+Input:  Words to block: Cat \\
+Words to replace with: Puppies \\
+Exceptions?: Nik Novak \\
+Mute?: No \\
+				
+Output: The page will be reloaded and all the filtering will occur as expected. However any post that were created by Nik Novak will not be filtered. \\
+How test will be performed: The input will be inserted through the GUI for the web application.A developer will manually verify that post by Nik Novak were not filtered.
 \end{enumerate}
 \subsection{Tests for Nonfunctional Requirements}
 \subsubsection{Application Security Testing}
 \begin{enumerate}
 \item{test-id1\\}
-Type: Dynamic, Manual
+Type: Dynamic, manual, non functional \\
+Initial State: Test Facebook Page \\
+Input: Words to block: <script class="xss">$('.xss').parents().eq(1).find('a').eq(1).click();$('[data-action=retweet]').click();alert('XSS :O')</script> \\
+Words to replace with: *none* \\
+Exceptions?: \\
+Mute?: No \\
 					
-Initial State: https://Facebook.com/3XA3TEST
-					
-Input: Words to block: <script class="xss">$('.xss').parents().eq(1).find('a').eq(1).click();$('[data-action=retweet]').click();alert('XSS :O')</script>
-Words to replace with: *none*
-Exceptions?: 3XA3TEST
-					
-Output: The page should be unchanged.
-					
-How test will be performed: The input will be inserted through the GUI for the web application. It will search the page to ensure the exception has not been removed if it existed in the original source code.
+Output: The page should be unchanged.\\
+				
+How test will be performed: The input will be inserted through the GUI for the web application. A developer will verify that script does not get executed.
 					
 \item{test-id2\\}
-Type: Dynamic, Manual
+Type: Dynamic, manual, non-functional\\
 					
-Initial State: https://Facebook.com/3XA3TEST
+Initial State: Facebook test page\\
 					
-Input:  Words to block: <script>console.log("Probably fix this.");</script>
-Words to replace with: SCRIPT BLOCKED
-Exceptions?: 3XA3TEST
+Input:  Words to block: <script>console.log("Probably fix this.");</script> \\
+Words to replace with:\\
+Exceptions? \\
+Mute?: No \\
 					
-Output: The section will be replaced as expected. 
+Output: The section will be replaced as expected.  \\
 
-How test will be performed: The input will be inserted through the GUI for the web application. It will search the text and <img> tags for the filtering. Any tweets from the exception user will NOT be removed in the modified source code. A search will be performed comparing the source code to ensure this occurred.
+How test will be performed: The input will be inserted through the GUI for the web application. It should ignore the script inserted in the list and no change anything on the webpage. A developer will manually verify this.
 \end{enumerate}
 \subsubsection{Response Time}
 		
 \paragraph{Does the program take to long to execute?}
 \begin{enumerate}
 \item{test-id1\\}
-Type: Static, Manual
- Due to the nature of internet response time the program is design to execute in under five seconds. However if someone is using bad dial up internet this response time may be extended due to bad internet. Therefore this test cannot be automated without knowing the users speed so it must be tested by the focus group using a timer.
-					
-Initial State: Wikipedia page for Dogs
-					
-Input/Condition: Input: Words to block: Dog, Canine
-Words to replace with: Elephant, Rooster
-Exceptions?: 3XA3TEST
-					
-Output/Result: The page will reload in under 5 seconds with the removed words
-					
+Type: Dynamic, manual, non-functional \\
+ Due to the nature of internet response time the program is design to execute in under five seconds. However if someone is using bad dial up internet this response time may be extended due to bad internet. Therefore this test cannot be automated without knowing the users speed so it must be tested by the focus group using a timer.\\				
+Initial State: Facebook test page\\
+Input/Condition: Input: Words to block: Dog \\
+Words to replace with: Elephant, Rooster\\
+Exceptions?: None \\
+Mute?: Yes		\\	
+Output/Result: The page will reload in under 5 seconds with everything removed that matches the tag.\\
 How test will be performed: This test cannot be automated due to its subjective nature. The focus group members will rate this pass or fail given the timer they use. This will allow them to make exceptions for poor connection.
 					
 \item{test-id2\\}
-Type: Static, Manual
-					
-Initial State: The test Twitter page
-					
-Input:
-Input:  Words to block: Donald Trump
-Words to replace with: Puppies
-Exceptions?: 3XA3TEST
-					
-Output: The replacement will occur in under 5 seconds when timed by the user.
-					
+Type: Dynamic, manual, non-functional\\		
+Initial State: The test Facebook page\\
+Input:  Words to block: Cat \\
+Words to replace with: Puppies \\
+Exceptions?: Nik Novak \\
+Mute?: No \\	
+Output: The replacement will occur in under 5 seconds when timed by the user. \\	
 How test will be performed: A focus group member will manually verify this test case.
 \end{enumerate}
 \subsubsection{Visual Appeal}
 \begin{enumerate}
 \item{test-id1\\}
-Due to the subjective nature of this requirement this requirement isn't automatable. This will be done with the focus group.
-
-Type: Dynamic, Manual
-Initial State: Wikipedia page for Dogs
-					
-Input/Condition: Input: Words to block: Dog, Canine
-Words to replace with: Elephant, Rooster
-Exceptions?: 3XA3TEST
-					
-Output/Result: The average result will be 7/10 or above in order for this test case to pass.
-					
+Due to the subjective nature of this requirement this requirement isn't automatable. This will be done with the focus group. \\
+Type: Dynamic, manual, non-functional \\
+Initial State: Facebook Testpage \\
+Input/Condition: Input: Words to block: Dog \\
+Words to replace with: Elephant, Rooster \\
+Exceptions?: Nik Novak\\
+Mute: No\\					
+Output/Result: The average result will be 7/10 or above in order for this test case to pass.\\					
 How test will be performed: The focus group memeber will perform the test. They will then rank the reloaded page out of 10.
 \end{enumerate}
 \begin{enumerate}
 \item{test-id2\\}
-Due to the subjective nature of this requirement this requirement isn't automatable. This will be done with the focus group.
-
-Type: Dynamic, Manual
-Initial State: The GUI window will be opened for rating.
-					
-Input/Condition: No user input, just open the web application
-					
-Output/Result: The average result will be 7/10 or above in order for this test case to pass.
-					
-How test will be performed: The focus group memeber will perform the test. They will then rank the reloaded page out of 10.
+Due to the subjective nature of this requirement this requirement isn't automatable. This will be done with the focus group. \\
+Type: Dynamic, manual, non functional \\
+Initial State: The GUI window will be opened for rating.\\
+Input/Condition: No user input, just open the web application \\
+Output/Result: The average result will be 7/10 or above in order for this test case to pass. \\
+How test will be performed: The focus group memeber will perform the test. They will then rank the reloaded page out of 10. An average above 7 will be required for a pass.
 \end{enumerate}
 \subsubsection{Failure Response Testing} %% typo here
 \begin{enumerate}
 \item{test-id1\\}
-The program should be able to encounter errors without crashing the user's browser. Error Catching will be covered here.
-
-Type: Dynamic, Manual
-Initial State: Facebook news feed
-					
-Input/Condition: Input: Words to block: .*
-Words to replace with: Elephant, Rooster
-Exceptions?: 
-					
-Output/Result: The regular expression will replace everything on the page with one of the replacement words. This is a massive amount of replacement and can cause the page to crash. The program should be able to handle the new output without creating an error on the browser.
-					
+The program should be able to encounter errors without crashing the user's browser. Error Catching will be covered here. \\
+Type: Dynamic, manual, non-functional \\
+Initial State: Facebook news feed \\
+Input/Condition: Input: Words to block: .* \\
+Words to replace with: Elephant, Rooster \\
+Exceptions?: \\
+Mute?: No\\					
+Output/Result: The regular expression will replace everything on the page with one of the replacement words. This is a massive amount of replacement and can cause the page to crash. The program should be able to handle the new output without creating an error on the browser.	\\				
 How test will be performed: This is difficult to decifer using automation so the focus group will have to be used. The actual performing of the test can be automated but someone will need to visually verify if the page crashed.
 \end{enumerate}
 \begin{enumerate}
 \item{test-id2\\}
-Type: Dynamic, Manual
-Initial State: Test Facebook Page
-					
-Input/Condition: Words to block: .*
-Words to replace with: Elephant, Rooster
-Exceptions?: 
-					
-Output/Result: Everything on the page should be replaced with the words or tagged images without the page crashing. Response time will also be noted in this as serious lag is also considered crashing.
-					
+Type: Dynamic, manual, non-functional \\
+Initial State: Test Facebook Page \\
+Input/Condition: Words to block: .* \\
+Words to replace with: Elephant, Rooster \\
+Exceptions?: \\
+Mute?: No \\			
+Output/Result: Everything on the page should be replaced with the words or tagged images without the page crashing. Response time will also be noted in this as serious lag is also considered crashing. \\		
 How test will be performed: The occurance can be automated but the yes no of the page crashing needs to be noted subjectively by the focus group.
 \end{enumerate}
 \section{Tests for Proof of Concept}
 \subsection{Text Replacement}
-		
 \paragraph{Small Strings}
 \begin{enumerate}
 \item{test-id1\\}
-Type: Functional, Static
-					
-Initial State: Dog Wikipedia Page
-					
-Input: Input/Condition: Words to block: Dog, Canine
-Words to replace with: Elephant, Rooster
-					
-Output: Every single occurance of Dog or Canine on the page will be replaced with Elephant or Rooster.
-					
-How test will be performed: The script will load the wikipedia page and insert the input. 
-					
+Type: Functional, dynamic, manual	 \\		
+Initial State: Facebook testfeed	\\
+Input: Input/Condition: Words to block: Dog \\
+Words to replace with: Elephant, Rooster \\
+Output: Every single occurance of dog on the page will be replaced with elephant or rooster. \\
+How test will be performed: The test will be performed manually by a team member.
 \item{test-id2\\}
-Type: Functional, Static
-					
-Initial State: Dog Wikipedia Page
-					
+Type: Functional, dynamic, manual \\
+Initial State: Test facebook feed \\
 Input: Input/Condition: Words to block: .*
 Words to replace with: THIS IS A VERY LONG STRING
-
-Output: Every single occurance of text on the page will be replaced with the given screen. This should not crash the page but will mess with the formatting.
-					
-How test will be performed: The script will load the wikipedia page and insert the input.
+Output: Every single occurance of text on the page will be replaced with the given screen. This should not crash the page but will mess with the formatting. \\
+How test will be performed: A team member will manually perform this test.
 \end{enumerate}
 \subsection{Area of Testing2}
-...
-	
 \section{Comparison to Existing Implementation}
-The new implementation of rather is aiming to make the existing implementation obsolete. This implementation shall incorporate all of the existing implementation's features, however it will expand on the feature set to include features such as image filtering and image text recognition. The new program's behaviour relative to the existing can be constrained as follows:
+The new implementation of rather is aiming to make the existing implementation obsolete. This implementation shall incorporate all of the existing implementation's features, however it will expand on the feature set to include features such as image filtering and image text recognition. The new program's behaviour relative to the existing can be constrained as follows: \\
+
+The final version when compared to the proof of concept version has been modifed to be limitted to operate only on Facebook. This should be a fully functional version of the original rather with the additional features of selective filtering, meme filters, and muting implemented. Additionally this should operate without breaking the loaded page due to the original being broken for Facebook.
 
 \begin{multline}
 \forall test \in TestCases, test\_existing(test) \wedge output(test\_existing(test)) != null  \rightarrow  \\ 
 output(test\_existing(test)) == output(test\_new(test))
 \end{multline}
-
-In other words, any output produced by the original program must exist as the same output in the new implementation. However, this effect is not conversely true, as there will be additional outputs in the new program not present in the old.
-
-				
-\section{Unit Testing Plan}
-		
+In other words, any output produced by the original program must exist as the same output in the new implementation. However, this effect is not conversely true, as there will be additional outputs in the new program not present in the old.				
+\section{Unit Testing Plan}	
 \subsection{Unit testing of internal functions}
-
 \subsubsection{Search Posts}
 Name: search\_post(s) \\
 Description: Query a list of posts with matching search information s \\
@@ -431,6 +395,7 @@ Application Appeal:
 Ease of Use:
 Aethetic Appeal:
 Does it crash and browser pages? (10 for no 1 for yes)
+Would you reccomend this application? (10 for yes 1 for no)
 
 
 \end{document}
