@@ -24,7 +24,7 @@
 \newcounter{mnum}
 \newcommand{\mthemnum}{M\themnum}
 \newcommand{\mref}[1]{M\ref{#1}}
-\title{SE 3XA3: Software Requirements Specification\\Title of Project}
+\title{SE 3XA3: Software Requirements Specification\\Rather 2.0}
 \author{Team \#, Team 3
 		\\ Erin Varey, Vareye
 		\\ Nik Novak, Novakn
@@ -106,13 +106,12 @@ require changing the one module that hides the associated decision. The approach
 adapted here is called design for
 change.
 
-Due to API compatability issues any code that relies on an outside API is maintained in its own module. This means particular social media API's need to be kept hidden from one another so if there is modifications that affect the original it will not affect the application as a whole. This means there will be three replacement modules:
+Due to API compatability issues any code that relies on an outside API is maintained in its own module. This means particular social media API's need to be kept hidden from one another so if there is modifications that affect the original it will not affect the application as a whole. This means there will be two replacement modules:
 
 Facebook feed replacer.
-Twitter feed replacer.
 Replacer for all other websites.
 
-Additionally the image replacement software will need to be kept seperate due to relying on API's. The image replacer relies on instagram RS feeds to obtain images. Image recognition software for identification of memes also replies on an API and will be needed to be kept modular from the rest of the modules. 
+Additionally the image replacement software will need to be kept seperate due to relying on API's. The image replacer relies on GIPHY RS feeds to obtain images. Image recognition software for identification of memes also replies on Google's Vision API and will be needed to be kept modular from the rest of the modules. 
 \begin{description}
 \item[\refstepcounter{acnum} \actheacnum \label{acHardware}:] The specific
   hardware on which the software is running.
@@ -125,7 +124,7 @@ There is minimal hardware required for Rather to run. It requires a laptop that 
 User input:
 The user is required to input items to filter, and a desired replacement. This is done through strings that are communicated textually.
 
-Internet: There is a variety of input required from the webpages the user interacts with. There is the source code that will be obtained from every single webpage used. There is also input that is communicated from webpages that do not contain all the information in the source code. Additionally due to webpages being loaded dynamically, frequent reloading of the source code is required so the application will continue to interact with webpage. Some webpages have unique streamlet like information that will replace the entire webpage rather than the individual feed. The actual streamlet information will need to be uniquely obtained. This will be done for Facebook, and Twitter. These each have API's that have been previously developed and supported to give this information.  
+Facebook: There is a variety of input required from Facebook that the user interacts with. There is the source code that will be obtained from each individual feed used. Additionally due to webpages being loaded dynamically, frequent reloading of the source code is required so the application will continue to interact with the newsfeed. Some webpages have unique streamlet like information that will replace the entire webpage rather than the individual feed. The actual streamlet information will need to be uniquely obtained. This will be done for Facebook specifically. These each have APIs that have been previously developed and supported to give this information.  
 \end{description}
 \subsection{Unlikely Changes} \label{SecUchange}
 The module design should be as general as possible. However, a general system is
@@ -164,8 +163,7 @@ Due to the nature of javascript code, modules are not often used. We used module
 \midrule
 {Hardware-Hiding Module} & ~ \\
 \midrule
-\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & ?\\ % why the question mark?
-& Twitter-API.js\\
+\multirow{6}{0.3\textwidth}{Behaviour-Hiding Module}\\ % why the question mark?
 & Facebook-API.js\\
 &Filter-Feature.js\\
 &Detect-Website.js\\
@@ -174,7 +172,7 @@ Due to the nature of javascript code, modules are not often used. We used module
 & content.js\\
 \midrule
 % javascript doesn't have a hyphen in it
-\multirow{3}{0.3\textwidth}{Non Java-script Modules and Design modules} & {?}\\ % why the question mark?
+\multirow{2}{0.3\textwidth}{Non Javascript Modules and Design modules}\\ % why the question mark?
 & manifest.json\\
 & popup.html \\
 \bottomrule
@@ -195,8 +193,7 @@ between requirements and modules is listed in Table 3.
 \midrule
 {Module and requirements} & ~ \\
 \midrule
-\multirow{7}{0.3\textwidth}{Functional} & ?\\
-& Twitter-API.js ----- Allow the user to block specific items in their twitter feed\\
+\multirow{7}{0.3\textwidth}{Functional}\\
 & Facebook-API.js ----- Allow the user to block specific items in their newsfeed\\
 &Filter-Feature.js ----- Allow the user to filter individual post they do not want censored\\
 &Detect-Website.js ----- Allow the user to block items on specific web feeds. (Will allow functionality for Twitter and Facebook)\\
@@ -253,14 +250,13 @@ selected.
   module will need to change if there are changes in the SRS.
 \item[Implemented By:] Facebook-API.js, Twitter-API.js, Filter-Feauture.js, content.js, popup.html
 \end{description}
-\subsubsection{Input Format Module (\mref{mInput})} %% this doesn't get rendered correctly
+\subsubsection{Input Format Module} %% this doesn't get rendered correctly
 \begin{description}
 \item[Secrets:]The format and structure of the input data.
 \item[Services:]Converts the input data into the data structure used by the
   input parameters module.
 \item[Implemented By:] popup.html, content.js
 \end{description}
-\subsubsection{Etc.}
 \subsection{Software Decision Module}
 \begin{description}
 \item[Secrets:] The design decision based on mathematical theorems, physical
@@ -272,7 +268,6 @@ selected.
   % improve performance than by externally imposed changes.
 \item[Implemented By:] Detect-Website.js, page.js
 \end{description}
-\subsubsection{Etc.} %% "Etc." ?
 \section{Traceability Matrix} \label{SecTM}
 This section shows two traceability matrices: between the modules and the
 requirements and between the modules and the anticipated changes.
@@ -280,18 +275,18 @@ requirements and between the modules and the anticipated changes.
 % like fref
 \begin{table}[H]
 \centering
-\begin{tabular}{p{0.2\textwidth} p{0.6\textwidth}}
+\begin{tabular}{p{0.6\textwidth} p{0.2\textwidth}}
 \toprule
 \textbf{Req.} & \textbf{Modules}\\
 \midrule
-R1 &  popup.html\\
-R2 &  popup.html\\
-R3 &  popup.html\\
-R4 &  Facebook-API.js, Twttier-API.js, Detect-Website.js\\ % "Twttier" ?
-R5 &  Image.js, Content.js\\
-R6 &  Image.js\\
-R7 &  Image.js, Content.js, Popup.js\\
-R8 &  Popup.html\\
+1. User can input "kill list" &  popup.html\\
+2. User can input "replacement list" &  popup.html\\
+3. User can decide whether to mute or replace posts &  popup.html\\
+4. Program identifies individual posts and is only active on Facebook. &  Facebook-API.js, Detect-Website.js\\ 
+5. Program searches for keywords in both text and image contents.  &  Image.js, Content.js\\
+6. Program can identify images within a post. &  Image.js\\
+7. Program mutes or replaces content when keywords are found. &  Image.js, Content.js, Popup.js\\
+8. Program can "un-filter" specific people's posts. &  popup.html\\
 \bottomrule
 \end{tabular}
 \caption{Trace Between Requirements and Modules}
@@ -299,14 +294,13 @@ R8 &  Popup.html\\
 \end{table}
 \begin{table}[H]
 \centering
-\begin{tabular}{p{0.2\textwidth} p{0.6\textwidth}}
+\begin{tabular}{p{0.6\textwidth} p{0.2\textwidth}}
 \toprule
 \textbf{AC} & \textbf{Modules}\\
 \midrule
-\acref Twitter-API changes & Twitter-API.js\\
-\acref Facebook-API changes & Facebook-API.js\\
-\acref Input style changes & popup.html\\
-\acref Webpage does not load completely initially & Detect-Website.js\\
+Facebook-API changes & Facebook-API.js\\
+Input style changes & popup.html\\
+Webpage does not load completely initially & Detect-Website.js\\
 \bottomrule
 \end{tabular}
 \caption{Trace Between Anticipated Changes and Modules}
