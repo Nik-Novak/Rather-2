@@ -62,8 +62,16 @@ function remove_text(textmarked, elements){
     for (var i=0; i<textmarked.length; i++){
         if(safe_listed(elements[textmarked[i]]))
             continue;
-        elements[textmarked[i]].innerHTML = null;
-        inject_gif(elements[textmarked[i]]);
+        
+        console.log("ATTENTION-text");
+        console.log(c_mute);
+        if(c_mute==true){
+            elements[textmarked[i]].innerHTML = null;
+        }
+        else{
+            inject_gif(elements[textmarked[i]]);
+        }
+        
     }
 }
 
