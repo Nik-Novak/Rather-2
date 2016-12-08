@@ -14,3 +14,13 @@ Code - Implementation
 
 
 Link to original project: https://github.com/getrather/rather-1.0
+
+# Installation
+
+Installing is as easy as
+
+1)
+
+2)
+
+3)
