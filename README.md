@@ -6,6 +6,7 @@ Team Members: Nik, Erin, Joel
 
 
 This project is a reimplementation of rather, a Google Chrome web extension that allows for the swap of social media items with other more desired replacements.
+The project works exclusively on Google Chrome.
 
 The folders and files for this project are as follows:
 
