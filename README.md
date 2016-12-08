@@ -21,6 +21,6 @@ Installing is as easy as
 
 1)
 
-2)
+2)![Alt text](/ReferenceMaterial/install-2.jpg?raw=true "Install 2")
 
 3)
