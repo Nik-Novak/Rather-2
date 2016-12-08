@@ -15,6 +15,9 @@ Code - Implementation
 
 Link to original project: https://github.com/getrather/rather-1.0
 
+# Download
+Get the latest version here: https://drive.google.com/open?id=0B4BnGMLaSEPjYWJTemk2dXV5WDg
+
 # Installation
 
 Installing is as easy as
