@@ -1,13 +1,9 @@
-var CV_URL = 'https://vision.googleapis.com/v1/images:annotate?key=' + 'AIzaSyCa_Co-vDUcs81I8bNw4OuBuBQZhuxlEOY';
+var CV_URL = 'https://vision.googleapis.com/v1/images:annotate?key=' + 'AIzaSyCa_Co-vDUcs81I8bNw4OuBuBQZhuxlEOY'; //Google Could Vision API access link
 
-var script = document.createElement('script');
-script.src = 'https://code.jquery.com/jquery-1.11.0.min.js';
-script.type = 'text/javascript';
-document.getElementsByTagName('head')[0].appendChild(script);
-
-
+/*
+    Function that is run every 3 seconds, checking if any new content has been laoded onto the page. If so, attempt to mute/replace new content.
+*/
 var prevsubstreamlength = 0;
-
 setInterval(function(){
     var len;
     var weblen = DetectWebsite.detect();
@@ -29,13 +25,21 @@ setInterval(function(){
 
 
 
-
+/*
+    FacebookAPI module, which handles injection, post identification and otehr features specific to Facebook
+*/
 var FacebookAPI = (function (my) {
 
+    /*
+        Public interface for injecting all posts with content matchign block_text, with content matching replace_text
+    */
     my.inject = function(block_text, replace_text){
         replace(block_text, replace_text);
     };
     
+    /*
+        Public interface for searching for posts within facebook domain
+    */
     my.search_posts = function(){
         
     };
@@ -129,7 +133,9 @@ var FacebookAPI = (function (my) {
     return my;
 }(FacebookAPI || {}));
 
-
+/*
+    A module for anythign related to determining what service the extension is being used on
+*/
 var DetectWebsite = (function(my){
 	my.detect = function(){
 		return window.location.pathname;
@@ -145,6 +151,9 @@ var DetectWebsite = (function(my){
 }(DetectWebsite || {}));
 
 
+/*
+    A Module for abstracting content retrieval for injection, for now this module only contains images however it is anticipated to change in the future
+*/
 var Content = (function(my){
 	my.image = function(post){
 	    return Image.image_retrieve(post);
@@ -152,7 +161,9 @@ var Content = (function(my){
 	return my;
 }(Content || {}));
 
-
+/*
+    A Module for abstracting image content retrieval and image content analysis for the Content module.
+*/
 var Image = (function(my){
 	my.init = function(){
 		
@@ -294,11 +305,12 @@ var Image = (function(my){
 	        
 	    }
 	};
-	
-	
 	return my;
 }(Image || {}));
 
+/*
+    A Pseudo class settings_packet that allows various modules to read the user's current settings, and make decisions based on the results. Settings include: the list of words to block, the list of words to replace, the list of names to filter and the toggle option of muting or replacing post content.
+*/
 var settings_packet = (function(my){
 	my.reqblock = null;
 	my.reqreplace = null;
@@ -307,6 +319,9 @@ var settings_packet = (function(my){
 	return my;
 }(settings_packet || {}));
 
+/*
+    A module for handling the filtering of custom users.
+*/
 var FilterFeature = (function(my){
 	my.checknames = function(post){
 		return safe_listed(post);
@@ -315,8 +330,7 @@ var FilterFeature = (function(my){
 	function safe_listed(post){
 	    var name_container = post.getElementsByClassName("clearfix");
 	    var name = name_container[1].getElementsByTagName("a")[0].text;
-	    console.log("NAME *T&*BSHJ GD&* SGBISFH O DS" + name);
-	    if(name == "Joel Straatman")
+	    if(name == settings_packet.filternames)
 	        return true;
 	    return false;
 	}
@@ -325,6 +339,9 @@ var FilterFeature = (function(my){
 
 console.log("Tested");
 
+/*
+    A message listener for recieving messages from external scripts such as the extension's main script.
+*/
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     console.log(sender.tab ?  //console.log(sender.tab ?
