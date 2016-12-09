@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Rather_2" company="McMaster 3XA3" webLink="https://gitlab.cas.mcmaster.ca/novakn/Rather_2.git" view-date="2016-09-11" view-index="0" gantt-divider-location="579" resource-divider-location="300" version="2.8.1" locale="en_US">
+<?xml version="1.0" encoding="UTF-8"?><project name="Rather_2" company="McMaster 3XA3" webLink="https://gitlab.cas.mcmaster.ca/novakn/Rather_2.git" view-date="2016-09-18" view-index="0" gantt-divider-location="579" resource-divider-location="300" version="2.8.1" locale="en_US">
     <description><![CDATA[Gantt project for highlighting millstones and resource allocation throughtout the project.]]></description>
-    <view zooming-state="default:5" id="gantt-chart">
+    <view zooming-state="default:6" id="gantt-chart">
         <field id="tpd3" name="Name" width="264" order="0"/>
         <field id="tpd4" name="Begin date" width="156" order="1"/>
         <field id="tpd5" name="End date" width="155" order="2"/>
@@ -78,7 +78,7 @@
             </task>
             <task id="27" name="Content verification" color="#8cb6ce" meeting="false" start="2016-10-03" duration="5" complete="0" expand="true"/>
         </task>
-        <task id="12" name="Requirements Document Rev 0" color="#000000" meeting="false" start="2016-10-10" duration="5" complete="0" expand="false">
+        <task id="12" name="Requirements Document Rev 0" color="#000000" meeting="false" start="2016-10-10" duration="10" complete="0" expand="false">
             <depend id="13" type="2" difference="0" hardness="Strong"/>
             <depend id="14" type="2" difference="0" hardness="Strong"/>
             <depend id="15" type="2" difference="0" hardness="Strong"/>
@@ -92,106 +92,133 @@
                 <depend id="5" type="2" difference="0" hardness="Strong"/>
             </task>
             <task id="45" name="Project issues" color="#8cb6ce" meeting="false" start="2016-10-10" duration="5" complete="0" expand="true"/>
-            <task id="46" name="Requirements list" color="#000000" meeting="false" start="2016-10-10" duration="5" complete="0" expand="false">
+            <task id="46" name="Requirements list" color="#000000" meeting="false" start="2016-10-10" duration="10" complete="0" expand="true">
                 <task id="48" name="Functional" meeting="false" start="2016-10-10" duration="5" complete="0" expand="true">
                     <depend id="18" type="2" difference="0" hardness="Strong"/>
+                    <task id="198" name="R1: User can input &quot;kill list&quot;" color="#8cb6ce" meeting="false" start="2016-10-10" duration="5" complete="0" expand="true"/>
+                    <task id="201" name="R2: User can input &quot;replacement list" color="#8cb6ce" meeting="false" start="2016-10-10" duration="5" complete="0" expand="true"/>
+                    <task id="203" name="R3: User can decide whether to mute or replace posts" color="#8cb6ce" meeting="false" start="2016-10-10" duration="5" complete="0" expand="true"/>
+                    <task id="206" name="R4: Program identifies individual posts and is only active on Facebook" color="#8cb6ce" meeting="false" start="2016-10-10" duration="5" complete="0" expand="true"/>
+                    <task id="209" name="R5: Program searches for keywords in both text and image contents" color="#8cb6ce" meeting="false" start="2016-10-10" duration="5" complete="0" expand="true"/>
+                    <task id="211" name="R6: Program can identify images within a post." color="#8cb6ce" meeting="false" start="2016-10-10" duration="5" complete="0" expand="true"/>
+                    <task id="214" name="R7: Program mutes or replaces content when keywords are found" color="#8cb6ce" meeting="false" start="2016-10-10" duration="5" complete="0" expand="true"/>
+                    <task id="216" name="R8: Program can &quot;un-filter&quot; specific people's posts" color="#8cb6ce" meeting="false" start="2016-10-10" duration="5" complete="0" expand="true"/>
                 </task>
-                <task id="49" name="Non-functional" meeting="false" start="2016-10-10" duration="5" complete="0" expand="true"/>
+                <task id="49" name="Non-functional" meeting="false" start="2016-10-10" duration="10" complete="0" expand="true">
+                    <task id="222" name="Look-and-feel requirements" meeting="false" start="2016-10-10" duration="10" complete="0" expand="true">
+                        <task id="239" name="Sizability of replacement images" color="#8cb6ce" meeting="false" start="2016-10-10" duration="5" complete="0" expand="true"/>
+                        <task id="241" name="&quot;Sleek&quot; CSS design" color="#8cb6ce" meeting="false" start="2016-10-10" duration="10" complete="0" expand="true"/>
+                        <task id="243" name="Speed is not unbearably slow" color="#8cb6ce" meeting="false" start="2016-10-10" duration="5" complete="0" expand="true"/>
+                    </task>
+                    <task id="224" name="Usability and Humanity Requirements" meeting="false" start="2016-10-10" duration="5" complete="0" expand="true">
+                        <task id="245" name="Error only results in Rather shutting down, not the enitre page" color="#8cb6ce" meeting="false" start="2016-10-10" duration="5" complete="0" expand="true"/>
+                    </task>
+                    <task id="226" name="Performance Requirements" meeting="false" start="2016-10-10" duration="5" complete="0" expand="true">
+                        <task id="247" name="Load time approximately equal to Facebook's original load time" color="#8cb6ce" meeting="false" start="2016-10-10" duration="5" complete="0" expand="true"/>
+                    </task>
+                    <task id="228" name="Operational and Environmental Requirements" color="#8cb6ce" meeting="false" start="2016-10-10" duration="10" complete="0" expand="true"/>
+                    <task id="230" name="Maintainability and Support Requiements" color="#8cb6ce" meeting="false" start="2016-10-10" duration="10" complete="0" expand="true"/>
+                    <task id="232" name="Security Requirements" color="#8cb6ce" meeting="false" start="2016-10-10" duration="5" complete="0" expand="true">
+                        <task id="253" name="No Malware or viruses in the program or in APIs used" color="#8cb6ce" meeting="false" start="2016-10-10" duration="5" complete="0" expand="true"/>
+                        <task id="255" name="No collection or storage of users' information" color="#8cb6ce" meeting="false" start="2016-10-10" duration="5" complete="0" expand="true"/>
+                        <task id="257" name="No limit to what the user can filter" color="#8cb6ce" meeting="false" start="2016-10-10" duration="5" complete="0" expand="true"/>
+                    </task>
+                    <task id="235" name="Legal Requirements" meeting="false" start="2016-10-10" duration="10" complete="0" expand="true">
+                        <task id="249" name="Only collect publically shared images" color="#8cb6ce" meeting="false" start="2016-10-10" duration="10" complete="0" expand="true"/>
+                    </task>
+                    <task id="237" name="Health and Safety Requirements" color="#8cb6ce" meeting="false" start="2016-10-10" duration="5" complete="0" expand="true"/>
+                </task>
             </task>
-            <task id="47" name="Health and safety" color="#8cb6ce" meeting="false" start="2016-10-10" duration="5" complete="0" expand="true"/>
             <task id="51" name="Prior documentation updates" color="#8cb6ce" meeting="false" start="2016-10-10" duration="5" complete="0" expand="true"/>
             <task id="37" name="Content verification" color="#8cb6ce" meeting="false" start="2016-10-10" duration="5" complete="0" expand="true"/>
         </task>
-        <task id="13" name="Proof of Concept Demonstration" color="#000000" meeting="false" start="2016-10-17" duration="3" complete="0" expand="false">
-            <task id="52" name="Slide presentation" color="#000000" meeting="false" start="2016-10-17" duration="3" complete="0" expand="false">
-                <task id="58" name="Implementation details" color="#8cb6ce" meeting="false" start="2016-10-17" duration="3" complete="0" expand="true">
+        <task id="13" name="Proof of Concept Demonstration" color="#000000" meeting="false" start="2016-11-08" duration="3" complete="0" expand="false">
+            <task id="52" name="Slide presentation" color="#000000" meeting="false" start="2016-11-08" duration="3" complete="0" expand="false">
+                <task id="58" name="Implementation details" color="#8cb6ce" meeting="false" start="2016-11-08" duration="3" complete="0" expand="true">
                     <depend id="17" type="2" difference="0" hardness="Strong"/>
                     <depend id="19" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="56" name="Stability" meeting="false" start="2016-10-17" duration="3" complete="0" expand="true"/>
-                <task id="57" name="Next steps" meeting="false" start="2016-10-17" duration="3" complete="0" expand="true"/>
+                <task id="56" name="Stability" meeting="false" start="2016-11-08" duration="3" complete="0" expand="true"/>
+                <task id="57" name="Next steps" meeting="false" start="2016-11-08" duration="3" complete="0" expand="true"/>
             </task>
-            <task id="54" name="Existing software demo" color="#8cb6ce" meeting="false" start="2016-10-17" duration="3" complete="0" expand="true"/>
-            <task id="149" name="Skills Demo" color="#8cb6ce" meeting="false" start="2016-10-17" duration="1" complete="0" expand="true"/>
+            <task id="54" name="Existing software demo" color="#8cb6ce" meeting="false" start="2016-11-08" duration="3" complete="0" expand="true"/>
+            <task id="149" name="Skills Demo" color="#8cb6ce" meeting="false" start="2016-11-08" duration="1" complete="0" expand="true"/>
         </task>
-        <task id="14" name="Test Plan Rev 0" color="#000000" meeting="false" start="2016-10-17" duration="5" complete="0" expand="true">
-            <task id="64" name="Challenges" color="#8cb6ce" meeting="false" start="2016-10-17" duration="5" complete="0" expand="true"/>
-            <task id="85" name="Structural testing" color="#8cb6ce" meeting="false" start="2016-10-17" duration="5" complete="0" expand="true"/>
-            <task id="86" name="Functional testing" color="#8cb6ce" meeting="false" start="2016-10-17" duration="5" complete="0" expand="true">
+        <task id="14" name="Test Plan Rev 0" color="#000000" meeting="false" start="2016-10-24" duration="16" complete="0" expand="false">
+            <task id="64" name="Challenges" color="#8cb6ce" meeting="false" start="2016-11-08" duration="5" complete="0" expand="true"/>
+            <task id="85" name="Structural testing" color="#8cb6ce" meeting="false" start="2016-11-08" duration="5" complete="0" expand="true"/>
+            <task id="86" name="Functional testing" color="#8cb6ce" meeting="false" start="2016-11-08" duration="5" complete="0" expand="true">
                 <depend id="18" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="87" name="Dynamic and static testing" color="#8cb6ce" meeting="false" start="2016-10-17" duration="5" complete="0" expand="true">
+            <task id="87" name="Dynamic and static testing" color="#8cb6ce" meeting="false" start="2016-11-08" duration="5" complete="0" expand="true">
                 <depend id="5" type="2" difference="0" hardness="Strong"/>
                 <depend id="16" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="88" name="Manual and automatic testing" color="#8cb6ce" meeting="false" start="2016-10-17" duration="5" complete="0" expand="true"/>
-            <task id="89" name="Fault seeding and mutationt esting" color="#8cb6ce" meeting="false" start="2016-10-17" duration="5" complete="0" expand="true">
+            <task id="88" name="Manual and automatic testing" color="#8cb6ce" meeting="false" start="2016-11-08" duration="5" complete="0" expand="true"/>
+            <task id="89" name="Fault seeding and mutationt esting" color="#8cb6ce" meeting="false" start="2016-11-08" duration="5" complete="0" expand="true">
                 <depend id="18" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="90" name="Coverage metrics" color="#8cb6ce" meeting="false" start="2016-10-17" duration="5" complete="0" expand="true"/>
-            <task id="6" name="Unit Testing" color="#8cb6ce" meeting="false" start="2016-10-17" duration="5" complete="0" expand="true"/>
-            <task id="7" name="System Testing" color="#8cb6ce" meeting="false" start="2016-10-17" duration="5" complete="0" expand="true"/>
-            <task id="91" name="Test scheduling" color="#8cb6ce" meeting="false" start="2016-10-17" duration="5" complete="0" expand="true"/>
+            <task id="90" name="Coverage metrics" color="#8cb6ce" meeting="false" start="2016-11-08" duration="5" complete="0" expand="true"/>
+            <task id="6" name="Unit Testing" color="#8cb6ce" meeting="false" start="2016-10-24" duration="5" complete="0" expand="true"/>
+            <task id="7" name="System Testing" color="#8cb6ce" meeting="false" start="2016-11-08" duration="5" complete="0" expand="true"/>
+            <task id="91" name="Test scheduling" color="#8cb6ce" meeting="false" start="2016-11-08" duration="5" complete="0" expand="true"/>
         </task>
-        <task id="15" name="Design Doc Rev 0" color="#000000" meeting="false" start="2016-11-07" duration="5" complete="0" expand="false">
+        <task id="15" name="Design Doc Rev 0" color="#000000" meeting="false" start="2016-11-08" duration="5" complete="0" expand="false">
             <depend id="5" type="2" difference="0" hardness="Strong"/>
             <depend id="16" type="2" difference="0" hardness="Strong"/>
-            <task id="60" name="Modularity" color="#000000" meeting="false" start="2016-11-07" duration="5" complete="0" expand="true">
-                <task id="62" name="Cohesion" color="#8cb6ce" meeting="false" start="2016-11-07" duration="5" complete="0" expand="true"/>
-                <task id="63" name="Coupling" meeting="false" start="2016-11-07" duration="5" complete="0" expand="true"/>
+            <task id="60" name="Modularity" color="#000000" meeting="false" start="2016-11-08" duration="5" complete="0" expand="true">
+                <task id="62" name="Cohesion" color="#8cb6ce" meeting="false" start="2016-11-08" duration="5" complete="0" expand="true"/>
+                <task id="63" name="Coupling" meeting="false" start="2016-11-08" duration="5" complete="0" expand="true"/>
             </task>
-            <task id="65" name="MIS" color="#000000" meeting="false" start="2016-11-07" duration="5" complete="0" expand="false">
-                <task id="93" name="IO" color="#8cb6ce" meeting="false" start="2016-11-07" duration="5" complete="0" expand="true">
+            <task id="65" name="MIS" color="#000000" meeting="false" start="2016-11-08" duration="5" complete="0" expand="false">
+                <task id="93" name="IO" color="#8cb6ce" meeting="false" start="2016-11-08" duration="5" complete="0" expand="true">
                     <depend id="17" type="2" difference="0" hardness="Strong"/>
                     <depend id="19" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="94" name="Semantics" meeting="false" start="2016-11-07" duration="5" complete="0" expand="true"/>
-                <task id="95" name="State variables" color="#8cb6ce" meeting="false" start="2016-11-07" duration="5" complete="0" expand="true"/>
-                <task id="96" name="Environment variables" meeting="false" start="2016-11-07" duration="5" complete="0" expand="true"/>
+                <task id="94" name="Semantics" meeting="false" start="2016-11-08" duration="5" complete="0" expand="true"/>
+                <task id="95" name="State variables" color="#8cb6ce" meeting="false" start="2016-11-08" duration="5" complete="0" expand="true"/>
+                <task id="96" name="Environment variables" meeting="false" start="2016-11-08" duration="5" complete="0" expand="true"/>
             </task>
-            <task id="66" name="MID" color="#8cb6ce" meeting="false" start="2016-11-07" duration="5" complete="0" expand="true"/>
-            <task id="68" name="State diagrams" color="#8cb6ce" meeting="false" start="2016-11-07" duration="5" complete="0" expand="true"/>
-            <task id="69" name="Control flow diagrams" color="#8cb6ce" meeting="false" start="2016-11-07" duration="5" complete="0" expand="true"/>
-            <task id="80" name="Content verification" color="#8cb6ce" meeting="false" start="2016-11-07" duration="5" complete="0" expand="true"/>
-            <task id="92" name="MG" color="#8cb6ce" meeting="false" start="2016-11-07" duration="5" complete="0" expand="true"/>
+            <task id="66" name="MID" color="#8cb6ce" meeting="false" start="2016-11-08" duration="5" complete="0" expand="true"/>
+            <task id="68" name="State diagrams" color="#8cb6ce" meeting="false" start="2016-11-08" duration="5" complete="0" expand="true"/>
+            <task id="69" name="Control flow diagrams" color="#8cb6ce" meeting="false" start="2016-11-08" duration="5" complete="0" expand="true"/>
+            <task id="80" name="Content verification" color="#8cb6ce" meeting="false" start="2016-11-08" duration="5" complete="0" expand="true"/>
+            <task id="92" name="MG" color="#8cb6ce" meeting="false" start="2016-11-08" duration="5" complete="0" expand="true"/>
         </task>
-        <task id="5" name="Implementation" color="#000000" meeting="false" start="2016-11-14" duration="23" complete="0" expand="false">
+        <task id="5" name="Implementation" color="#000000" meeting="false" start="2016-11-15" duration="12" complete="0" expand="true">
             <depend id="17" type="2" difference="0" hardness="Strong"/>
             <depend id="19" type="2" difference="0" hardness="Strong"/>
-            <task id="142" name="Redesign" meeting="false" start="2016-11-14" duration="7" complete="0" expand="true">
-                <task id="145" name="Facebook integratioo" color="#8cb6ce" meeting="false" start="2016-11-14" duration="7" complete="0" expand="true">
+            <task id="142" name="Redesign" meeting="false" start="2016-11-15" duration="7" complete="0" expand="true">
+                <task id="145" name="Facebook integration" color="#8cb6ce" meeting="false" start="2016-11-15" duration="7" complete="0" expand="true">
                     <depend id="18" type="2" difference="0" hardness="Strong"/>
                 </task>
             </task>
-            <task id="143" name="Additions" color="#000000" meeting="false" start="2016-11-14" duration="23" complete="0" expand="true">
-                <task id="146" name="Text recognition" color="#8cb6ce" meeting="false" start="2016-11-14" duration="23" complete="0" expand="true"/>
-                <task id="147" name="Meme recongition" color="#8cb6ce" meeting="false" start="2016-11-14" duration="23" complete="0" expand="true"/>
-                <task id="148" name="Face recognition?" color="#8cb6ce" meeting="false" start="2016-11-14" duration="23" complete="0" expand="true">
-                    <depend id="18" type="2" difference="0" hardness="Strong"/>
-                </task>
+            <task id="143" name="Additions" color="#000000" meeting="false" start="2016-11-15" duration="12" complete="0" expand="true">
+                <task id="146" name="Text recognition" color="#8cb6ce" meeting="false" start="2016-11-15" duration="12" complete="0" expand="true"/>
+                <task id="147" name="Meme recongition" color="#8cb6ce" meeting="false" start="2016-11-15" duration="12" complete="0" expand="true"/>
             </task>
         </task>
-        <task id="16" name="Demo Rev 0" color="#000000" meeting="false" start="2016-11-14" duration="5" complete="0" expand="false">
-            <task id="71" name="Slides" color="#000000" meeting="false" start="2016-11-14" duration="5" complete="0" expand="true">
-                <task id="73" name="Changes from last demo" color="#8cb6ce" meeting="false" start="2016-11-14" duration="5" complete="0" expand="true"/>
-                <task id="74" name="Progress on goals" color="#8cb6ce" meeting="false" start="2016-11-14" duration="5" complete="0" expand="true"/>
-                <task id="75" name="Changes to plans" color="#8cb6ce" meeting="false" start="2016-11-14" duration="5" complete="0" expand="true"/>
-                <task id="76" name="Overall success" color="#8cb6ce" meeting="false" start="2016-11-14" duration="5" complete="0" expand="true"/>
+        <task id="16" name="Demo Rev 0" color="#000000" meeting="false" start="2016-11-15" duration="5" complete="0" expand="false">
+            <task id="71" name="Slides" color="#000000" meeting="false" start="2016-11-15" duration="5" complete="0" expand="true">
+                <task id="73" name="Changes from last demo" color="#8cb6ce" meeting="false" start="2016-11-15" duration="5" complete="0" expand="true"/>
+                <task id="74" name="Progress on goals" color="#8cb6ce" meeting="false" start="2016-11-15" duration="5" complete="0" expand="true"/>
+                <task id="75" name="Changes to plans" color="#8cb6ce" meeting="false" start="2016-11-15" duration="5" complete="0" expand="true"/>
+                <task id="76" name="Overall success" color="#8cb6ce" meeting="false" start="2016-11-15" duration="5" complete="0" expand="true"/>
             </task>
-            <task id="72" name="Software demo" color="#8cb6ce" meeting="false" start="2016-11-14" duration="5" complete="0" expand="true"/>
+            <task id="72" name="Software demo" color="#8cb6ce" meeting="false" start="2016-11-15" duration="5" complete="0" expand="true"/>
         </task>
-        <task id="17" name="Final Demo" color="#000000" meeting="false" start="2016-12-15" duration="5" complete="0" expand="false">
+        <task id="17" name="Final Demo" color="#000000" meeting="false" start="2016-12-01" duration="1" complete="0" expand="true">
             <depend id="18" type="2" difference="0" hardness="Strong"/>
-            <task id="77" name="Slides" color="#8cb6ce" meeting="false" start="2016-12-15" duration="5" complete="0" expand="true"/>
-            <task id="78" name="Software demo" color="#8cb6ce" meeting="false" start="2016-12-15" duration="5" complete="0" expand="true"/>
-            <task id="79" name="Correctness testing demo" color="#8cb6ce" meeting="false" start="2016-12-15" duration="5" complete="0" expand="true"/>
+            <task id="77" name="Slides" color="#8cb6ce" meeting="false" start="2016-12-01" duration="1" complete="0" expand="true"/>
+            <task id="78" name="Software demo" color="#8cb6ce" meeting="false" start="2016-12-01" duration="1" complete="0" expand="true"/>
+            <task id="79" name="Correctness testing demo" color="#8cb6ce" meeting="false" start="2016-12-01" duration="1" complete="0" expand="true"/>
         </task>
-        <task id="18" name="Peer Eval" color="#8cb6ce" meeting="true" start="2016-12-22" duration="0" complete="0" expand="true"/>
-        <task id="19" name="Final Documentation Rev 1" color="#000000" meeting="false" start="2016-12-15" duration="5" complete="0" expand="false">
-            <task id="81" name="Concatenation of documentation" color="#8cb6ce" meeting="false" start="2016-12-15" duration="5" complete="0" expand="true"/>
-            <task id="82" name="Document and structural cohesion" color="#8cb6ce" meeting="false" start="2016-12-15" duration="5" complete="0" expand="true"/>
-            <task id="83" name="Final review" color="#8cb6ce" meeting="false" start="2016-12-15" duration="5" complete="0" expand="true"/>
-            <task id="84" name="Submission" color="#8cb6ce" meeting="false" start="2016-12-15" duration="5" complete="0" expand="true"/>
+        <task id="18" name="Peer Eval" color="#8cb6ce" meeting="true" start="2016-12-02" duration="0" complete="0" expand="true"/>
+        <task id="19" name="Final Documentation Rev 1" color="#000000" meeting="false" start="2016-12-01" duration="6" complete="0" expand="true">
+            <task id="81" name="Concatenation of documentation" color="#8cb6ce" meeting="false" start="2016-12-01" duration="6" complete="0" expand="true"/>
+            <task id="82" name="Document and structural cohesion" color="#8cb6ce" meeting="false" start="2016-12-01" duration="6" complete="0" expand="true"/>
+            <task id="83" name="Final review" color="#8cb6ce" meeting="false" start="2016-12-07" duration="2" complete="0" expand="true"/>
+            <task id="84" name="Submission" color="#8cb6ce" meeting="false" start="2016-12-08" duration="1" complete="0" expand="true"/>
         </task>
         <task id="9" name="Revise and update plans" color="#8cb6ce" meeting="false" start="2016-09-12" duration="63" complete="0" expand="true"/>
     </tasks>
@@ -232,7 +259,6 @@
         <allocation task-id="145" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="3.33"/>
         <allocation task-id="146" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="3.33"/>
         <allocation task-id="147" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="3.33"/>
-        <allocation task-id="148" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="10.0"/>
         <allocation task-id="77" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="10.0"/>
         <allocation task-id="81" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="30.0"/>
         <allocation task-id="83" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="10.0"/>
@@ -282,7 +308,6 @@
         <allocation task-id="40" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="10.0"/>
         <allocation task-id="45" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="10.0"/>
         <allocation task-id="46" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="3.33"/>
-        <allocation task-id="47" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="10.0"/>
         <allocation task-id="51" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="3.33"/>
         <allocation task-id="37" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="3.33"/>
         <allocation task-id="86" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="10.0"/>
