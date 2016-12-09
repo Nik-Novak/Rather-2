@@ -185,20 +185,17 @@
             <task id="80" name="Content verification" color="#8cb6ce" meeting="false" start="2016-11-08" duration="5" complete="0" expand="true"/>
             <task id="92" name="MG" color="#8cb6ce" meeting="false" start="2016-11-08" duration="5" complete="0" expand="true"/>
         </task>
-        <task id="5" name="Implementation" color="#000000" meeting="false" start="2016-11-15" duration="23" complete="0" expand="false">
+        <task id="5" name="Implementation" color="#000000" meeting="false" start="2016-11-15" duration="12" complete="0" expand="true">
             <depend id="17" type="2" difference="0" hardness="Strong"/>
             <depend id="19" type="2" difference="0" hardness="Strong"/>
             <task id="142" name="Redesign" meeting="false" start="2016-11-15" duration="7" complete="0" expand="true">
-                <task id="145" name="Facebook integratioo" color="#8cb6ce" meeting="false" start="2016-11-15" duration="7" complete="0" expand="true">
+                <task id="145" name="Facebook integration" color="#8cb6ce" meeting="false" start="2016-11-15" duration="7" complete="0" expand="true">
                     <depend id="18" type="2" difference="0" hardness="Strong"/>
                 </task>
             </task>
-            <task id="143" name="Additions" color="#000000" meeting="false" start="2016-11-15" duration="23" complete="0" expand="true">
-                <task id="146" name="Text recognition" color="#8cb6ce" meeting="false" start="2016-11-15" duration="23" complete="0" expand="true"/>
-                <task id="147" name="Meme recongition" color="#8cb6ce" meeting="false" start="2016-11-15" duration="23" complete="0" expand="true"/>
-                <task id="148" name="Face recognition?" color="#8cb6ce" meeting="false" start="2016-11-15" duration="23" complete="0" expand="true">
-                    <depend id="18" type="2" difference="0" hardness="Strong"/>
-                </task>
+            <task id="143" name="Additions" color="#000000" meeting="false" start="2016-11-15" duration="12" complete="0" expand="true">
+                <task id="146" name="Text recognition" color="#8cb6ce" meeting="false" start="2016-11-15" duration="12" complete="0" expand="true"/>
+                <task id="147" name="Meme recongition" color="#8cb6ce" meeting="false" start="2016-11-15" duration="12" complete="0" expand="true"/>
             </task>
         </task>
         <task id="16" name="Demo Rev 0" color="#000000" meeting="false" start="2016-11-15" duration="5" complete="0" expand="false">
@@ -210,18 +207,18 @@
             </task>
             <task id="72" name="Software demo" color="#8cb6ce" meeting="false" start="2016-11-15" duration="5" complete="0" expand="true"/>
         </task>
-        <task id="17" name="Final Demo" color="#000000" meeting="false" start="2016-12-16" duration="5" complete="0" expand="false">
+        <task id="17" name="Final Demo" color="#000000" meeting="false" start="2016-12-01" duration="1" complete="0" expand="true">
             <depend id="18" type="2" difference="0" hardness="Strong"/>
-            <task id="77" name="Slides" color="#8cb6ce" meeting="false" start="2016-12-16" duration="5" complete="0" expand="true"/>
-            <task id="78" name="Software demo" color="#8cb6ce" meeting="false" start="2016-12-16" duration="5" complete="0" expand="true"/>
-            <task id="79" name="Correctness testing demo" color="#8cb6ce" meeting="false" start="2016-12-16" duration="5" complete="0" expand="true"/>
+            <task id="77" name="Slides" color="#8cb6ce" meeting="false" start="2016-12-01" duration="1" complete="0" expand="true"/>
+            <task id="78" name="Software demo" color="#8cb6ce" meeting="false" start="2016-12-01" duration="1" complete="0" expand="true"/>
+            <task id="79" name="Correctness testing demo" color="#8cb6ce" meeting="false" start="2016-12-01" duration="1" complete="0" expand="true"/>
         </task>
-        <task id="18" name="Peer Eval" color="#8cb6ce" meeting="true" start="2016-12-23" duration="0" complete="0" expand="true"/>
-        <task id="19" name="Final Documentation Rev 1" color="#000000" meeting="false" start="2016-12-16" duration="5" complete="0" expand="false">
-            <task id="81" name="Concatenation of documentation" color="#8cb6ce" meeting="false" start="2016-12-16" duration="5" complete="0" expand="true"/>
-            <task id="82" name="Document and structural cohesion" color="#8cb6ce" meeting="false" start="2016-12-16" duration="5" complete="0" expand="true"/>
-            <task id="83" name="Final review" color="#8cb6ce" meeting="false" start="2016-12-16" duration="5" complete="0" expand="true"/>
-            <task id="84" name="Submission" color="#8cb6ce" meeting="false" start="2016-12-16" duration="5" complete="0" expand="true"/>
+        <task id="18" name="Peer Eval" color="#8cb6ce" meeting="true" start="2016-12-02" duration="0" complete="0" expand="true"/>
+        <task id="19" name="Final Documentation Rev 1" color="#000000" meeting="false" start="2016-12-01" duration="6" complete="0" expand="true">
+            <task id="81" name="Concatenation of documentation" color="#8cb6ce" meeting="false" start="2016-12-01" duration="6" complete="0" expand="true"/>
+            <task id="82" name="Document and structural cohesion" color="#8cb6ce" meeting="false" start="2016-12-01" duration="6" complete="0" expand="true"/>
+            <task id="83" name="Final review" color="#8cb6ce" meeting="false" start="2016-12-07" duration="2" complete="0" expand="true"/>
+            <task id="84" name="Submission" color="#8cb6ce" meeting="false" start="2016-12-08" duration="1" complete="0" expand="true"/>
         </task>
         <task id="9" name="Revise and update plans" color="#8cb6ce" meeting="false" start="2016-09-12" duration="63" complete="0" expand="true"/>
     </tasks>
@@ -262,7 +259,6 @@
         <allocation task-id="145" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="3.33"/>
         <allocation task-id="146" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="3.33"/>
         <allocation task-id="147" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="3.33"/>
-        <allocation task-id="148" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="10.0"/>
         <allocation task-id="77" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="10.0"/>
         <allocation task-id="81" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="30.0"/>
         <allocation task-id="83" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="10.0"/>
