@@ -2,6 +2,8 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{hyperref}
+\usepackage{float}
+\usepackage{multirow}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -184,18 +186,71 @@ Reccomendation score: 10
 As shown above the average of each score is above 7. Each of these test cases pass.
 \subsection{Performance}
 Application performance testing was included in the functional and non-functional requirements. Performance time, malicious script handling, and error catching is included in these test. Each of these three sections had all of their test cases pass. The passing of these cases were integral to the performance of the application and were performed until they passed. 
-\subsection{etc.}
 	
 \section{Comparison to Existing Implementation}	
 The test were performed on the existing implementation. This section is not applicable.
 \section{Unit Testing}
+
 \section{Changes Due to Testing}
+
 \section{Automated Testing}
 		
 \section{Trace to Requirements}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{0.6\textwidth} p{0.2\textwidth}}
+\toprule
+\textbf{Req.} & \textbf{Modules}\\
+\midrule
+1. User can input "kill list" &  popup.html\\
+2. User can input "replacement list" &  popup.html\\
+3. User can decide whether to mute or replace posts &  popup.html\\
+4. Program identifies individual posts and is only active on Facebook. &  Facebook-API.js, Detect-Website.js\\ 
+5. Program searches for keywords in both text and image contents.  &  Image.js, Content.js\\
+6. Program can identify images within a post. &  Image.js\\
+7. Program mutes or replaces content when keywords are found. &  Image.js, Content.js, Popup.js\\
+8. Program can "un-filter" specific people's posts. &  popup.html\\
+\bottomrule
+\end{tabular}
+\caption{Trace Between Requirements and Modules}
+\label{TblRT}
+\end{table}
 		
 \section{Trace to Modules}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{0.3\textwidth} p{0.6\textwidth}}
+\toprule
+\textbf{Level 1} & \textbf{Level 2}\\
+\midrule
+{Module and requirements} & ~ \\
+\midrule
+\multirow{10}{0.3\textwidth}{Functional}\\
+& Facebook-API.js ----- Allow the user to block specific items in their newsfeed\\
+&Filter-Feature.js ----- Allow the user to filter individual post they do not want censored\\
+&Detect-Website.js ----- Allow the user to block items on specific web feeds. (Will allow functionality for Twitter and Facebook)\\
+&Image.js -----If a keyword is found images containing or tagged with it will be filtered\\
+& page.js ----- Main Controller for direction of information flow and program state\\
+& popup.js ----- Allow the user to filter content on websites that are not twitter and facebook\\
+& content.js ----- Allow the user to detect both content and tags related to a word\\
+& popup.html ----- Allow the user to input a "kill list" of words they want to remove\\
+& popup.html ----- Allow the user to input a "replacementl list" of words they want to remove\\
+& popup.html ----- Allow the user an option to mute or replace content\\
+\midrule
+\multirow{2}{0.3\textwidth}{Non-Functional} & {?}\\
+& manifest.json ----- performance requirements and file naming index file\\
+& popup.html ----- Allow the program to have a sleek look and feel\\
+
+\bottomrule
+\end{tabular}
+\caption{The modules that satisfies each requirement is listed}
+\label{TblMH}
+\end{table}
 		
 \section{Code Coverage Metrics}
+
+
 
 \end{document}
