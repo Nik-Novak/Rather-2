@@ -105,15 +105,6 @@ Saves the list of names to  be disregarded during injection. The list is stored 
 \subsection{clear\_all()}
 Removes all names from the filter, as well as from offline storage by deletion of FilterNames.csv
 
-\section{Twitter-API Module}
-API for implementation of Twitter specific post filtering. In the event that Twitter's HTML structure changes, this module is the only change required.
-
-Interface (public entities)
-\subsection{search\_posts(keywords)}
-Called when Page.js determines it is on a page. Returns the list of all posts with content matching the keywords provided.
-\subsection{inject(settings\_packet)}
-Calls search\_posts(keywords) to determine the list of posts to be replaced, then based on settings in settings\_packet and filter-feature, will inject content determined by Content.js to replace the post content.
-
 \section{Facebook-API Module}
 API for implementation of Facebook specific post filtering. In the event that Facebook's HTML structure changes, this module is the only change required.
 
