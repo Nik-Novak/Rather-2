@@ -191,11 +191,27 @@ Application performance testing was included in the functional and non-functiona
 The test were performed on the existing implementation. This section is not applicable.
 \section{Unit Testing}
 
+Unit Testing was an important aspect of code development. Separating various functions from the code base and testing them, both manually and automatically helped solve bugs and allow for a deeper understanding of method behaviour and interaction. Below is the list of Unit Tests originally developed during the Unit Testing Plan. Each additionally contains an "Expected Output" field as well as an "Actual Output".
+
 \section{Changes Due to Testing}
 
+Initially, a few modules failed under unit testing. This resulted in changes of the code to account for failing conditions. \\
+
+Unit test 6.2.1 failed under the extreme case in which the user entered 999 words to be saved each of which were of length 99. This lead to the discovery that the HTML5 localStorage allows only 5Mb of storage. Due to this discovery, the code was changed to avoid this case, and notify the user that too many words could result in a loss of the extension's userdata. \\
+
+Unit test 6.1.1 also failed under the assumption that all facebook posts contained a certain class ID that identified all posts when used in a query selector. It was discovered due to testing that this ID was unique only to each facebook user. This implied that the program would only work on the initial developer's facebook account. An adjustment was quickly made to broaden scope of the search to a segment of the class that posts are stored under. \\
+
 \section{Automated Testing}
+
+Automated testing was employed on several units to cover a wide range of inputs to each function being tested, and compute whether the outputs were correct. This resulted in a very efficient and effective test coverage, spanning from normal use cases to extreme boundary cases. Many functions were non-automatable, as much of the program works on the basis of image analysis, and correctness due to image content. The few functions that could qualify for unit testing were tested, and the following results were obtained:\\
+
+The test report can be found in the documentation, under AutomatedTestReport.png.\\
+
+All test scripts used to generate the report can be found under the directory testingdir. The report consists of five HTML test pages and matching test scripts. Each test script acts on its HTML test page, and attempts to perform its function. At the end of the test, the state of the HTML page is compared with the desired results for that test case. If the results agree, a "PASS" is issued, otherwise "FAIL". In the case that the program errors, a "FAIL" is issued, accompanied with an error message.
 		
 \section{Trace to Requirements}
+
+
 
 \begin{table}[H]
 \centering
@@ -250,6 +266,8 @@ The test were performed on the existing implementation. This section is not appl
 \end{table}
 		
 \section{Code Coverage Metrics}
+
+This was not deployed in our automated testing implementation.
 
 
 
