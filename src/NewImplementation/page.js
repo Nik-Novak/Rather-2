@@ -1,4 +1,4 @@
-var CV_URL = 'https://vision.googleapis.com/v1/images:annotate?key=' + 'AIzaSyCa_Co-vDUcs81I8bNw4OuBuBQZhuxlEOY'; //Google Could Vision API access link
+var CV_URL = 'https://vision.googleapis.com/v1/images:annotate?key=' + 'KEY REMOVED'; //Google Could Vision API access link
 
 /*
     Function that is run every 3 seconds, checking if any new content has been laoded onto the page. If so, attempt to mute/replace new content.
